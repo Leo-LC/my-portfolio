@@ -1,0 +1,25 @@
+//COLOR PALETTE
+
+$color-primary: #1e1e1e;
+$color-secondary: #929292;
+$color-accent: #ff3693;
+
+$bg-primary: $color-primary;
+
+$headings-color: $color-secondary;
+$headings-font-family: "Anton", sans-serif;
+$headings-font-weight: 700;
+
+$paragraph-color: $color-secondary;
+$paragraph-font-family: "Mulish", sans-serif;
+$paragraph-font-weight: 400;
+
+// Manage offsets for the navbar
+$header-height: 3.75rem;
+
+// LINKS
+$link-color: $color-secondary;
+$link-color-hover: white;
+$link-color-active: $color-accent;
+$link-decoration: none;
+$link-transition: all 0.3s ease-in-out;

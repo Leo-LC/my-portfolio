@@ -1,0 +1,17 @@
+---
+//Import Components
+
+import Navbar from "./Navbar.astro";
+---
+
+<header class="sticky z-10 top-0">
+  <Navbar client:visible />
+</header>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  header {
+    height: $header-height;
+  }
+</style>

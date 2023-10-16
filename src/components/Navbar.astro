@@ -1,0 +1,88 @@
+---
+
+---
+
+<div class="wrapper-navbar h-full border-b-2 border-b-white">
+  <nav class="text-gray-400 flex justify-between">
+    <div><a href="#hero" id="nametag">LEO LECEE</a></div>
+    <div class="flex">
+      <a class="nav-item" href="#about">ABOUT.</a>
+      <a class="nav-item" href="#works">WORKS.</a>
+      <a class="nav-item" href="#contact">CONTACT.</a>
+    </div>
+  </nav>
+  <div class="blur"></div>
+</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $headings-font-family;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  a {
+    color: $link-color;
+    text-decoration: $link-decoration;
+    transition: $link-transition;
+    font-size: 4rem;
+    line-height: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: translateY(60px);
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      color: $link-color-hover;
+    }
+    &:active {
+      color: $link-color-active;
+    }
+  }
+  #nametag {
+    font-size: 2rem;
+  }
+
+  .blur {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    z-index: -1;
+  }
+</style>
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "center center",
+      end: "bottom center",
+      scrub: true,
+      markers: true,
+    },
+  });
+
+  tl.to(".blur", {
+    opacity: 1,
+  });
+
+  let navItems = document.querySelectorAll(".nav-item");
+
+  gsap.to(navItems, {
+    y: 0,
+    stagger: 0.1,
+    delay: 0.5,
+    duration: 0.5,
+  });
+</script>

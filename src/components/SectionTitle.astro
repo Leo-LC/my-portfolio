@@ -1,0 +1,35 @@
+---
+const { text } = Astro.props;
+---
+
+<h2 class="test">{text}</h2>
+
+<style>
+  h2 {
+    font-size: 6rem;
+    text-transform: uppercase;
+  }
+  .test {
+    transform: translateX(-1000px);
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".test",
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+      markers: true,
+    },
+  });
+
+  tl.to(".test", {
+    x: 0,
+  });
+</script>

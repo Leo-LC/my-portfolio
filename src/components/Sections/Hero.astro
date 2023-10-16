@@ -1,0 +1,61 @@
+---
+
+
+
+---
+
+<section class="hero" id="hero">
+  <button> TOO DARK ?</button>
+  <span>Stop Scrolling</span>
+  <p>Hi, my name is Léo, a passionate</p>
+  <h1 id="hero-title">
+    <span class="box"></span>
+    <span class="text">FRONT-END DEVELOPER</span>
+    <span class="cursor">_</span>
+  </h1>
+
+  <p>Let's create YOUR web.</p>
+  <span>Or don't</span>
+  <!--   <div id="bg-image-wrapper">
+    <img src="/images/Stunning Mountains.jpg" alt="" />
+  </div> -->
+</section>
+
+<style>
+  section {
+    flex-direction: column;
+
+    color: grey;
+    background-image: url(/images/Stunning Mountains.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: contrast(0.5);
+    filter: grayscale(100%);
+  }
+
+  h1 {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  .cursor {
+    position: relative;
+    bottom: 16px;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { TextPlugin } from "gsap/TextPlugin";
+  gsap.registerPlugin(TextPlugin);
+  gsap.registerPlugin(ScrollTrigger);
+
+  let cursor = gsap.to(".cursor", {
+    opacity: 0,
+    duration: 1,
+    ease: "power2.inOut",
+    repeat: -1,
+  });
+</script>
