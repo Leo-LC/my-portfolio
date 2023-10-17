@@ -1,0 +1,39 @@
+---
+
+---
+
+<h1>
+  <span id="hero-title" class="text"></span>
+  <span class="cursor">_</span>
+</h1>
+
+<style>
+  .title-wrapper {
+  }
+  h1 {
+    max-width: 10ch;
+    font-size: 8rem;
+    line-height: 1;
+    display: block;
+    min-height: 16rem;
+  }
+
+  .cursor {
+    position: relative;
+    bottom: 22px;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  import gsap from "../../scripts/gsap";
+
+  // Animation "typewriter" du titre
+  let tl = gsap.timeline({});
+  tl.to("#hero-title", {
+    text: "FRONT-END DEVELOPER",
+    stagger: 1,
+    duration: 3,
+    ease: "power4.inOut",
+  });
+</script>

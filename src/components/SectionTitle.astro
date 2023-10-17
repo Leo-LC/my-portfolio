@@ -15,21 +15,23 @@ const { text } = Astro.props;
 </style>
 
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
+  import gsap from "../scripts/gsap";
 
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".test",
-      start: "top center",
-      end: "bottom center",
-      scrub: true,
-      markers: true,
-    },
-  });
+  const titles = document.querySelectorAll(".test");
 
-  tl.to(".test", {
-    x: 0,
+  // Trigger pour chaque title indémendament.
+  titles.forEach((title) => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: title,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        markers: true,
+      },
+    });
+    tl.to(title, {
+      x: 0,
+    });
   });
 </script>
