@@ -1,9 +1,10 @@
 ---
-import SectionTitle from "../SectionTitle.astro";
+import Section from "../../layout/Section.astro";
+import SectionTitle from "../Text/SectionTitle/SectionTitle";
 ---
 
-<section class="toolbox-section text-white">
-  <SectionTitle text="Front-End Toolbox." />
+<Section sectionClass="toolbox-section">
+  <SectionTitle client:visible title="My Front-End Toolbox . " />
   <div class="toolbox">GRID WITH (ANIMATED ? ) LOGOS OF TECH STACK</div>
   <p>
     I'm constantly refining my craft and pushing my abilities to create
@@ -11,4 +12,4 @@ import SectionTitle from "../SectionTitle.astro";
     and user-friendly websites, I'm excited to collaborate and bring your web
     visions to life!
   </p>
-</section>
+</Section>

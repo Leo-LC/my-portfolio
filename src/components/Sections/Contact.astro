@@ -1,10 +1,11 @@
 ---
-import SectionTitle from "../SectionTitle.astro";
+import Section from "../../layout/Section.astro";
+import SectionTitle from "../Text/SectionTitle/SectionTitle";
 ---
 
-<section class="contact-section text-white" id="contact">
-  <SectionTitle text="Get in touch" />
+<Section sectionClass="contact-section" sectionId="contact">
+  <SectionTitle client:visible title="Want to reach me ? " />
   <h3>Let's connect</h3>
   <form>FORMULAIRE DE CONTACT</form>
   <p>Available from XX</p>
-</section>
+</Section>

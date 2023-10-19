@@ -1,38 +1,59 @@
 ---
-import SectionTitle from "../SectionTitle.astro";
+import Section from "../../layout/Section.astro";
+/* import SectionTitle from "../Text/SectionTitle/SectionTitle.astro"; */
+import SectionTitle from "../Text/SectionTitle/SectionTitle.tsx";
 ---
 
-<section class="about-section" id="about">
-  <!--   <img
-    class="tewt-white thumbnail"
-    src="images/Stunning Mountains.jpg"
-    alt="test"
-  /> -->
-  <SectionTitle text="Let me introduce myself" />
-  <p class="quote">"Embrace challenges to predict and create your future."</p>
-  <p class="about-me">
-    "I'm all about crafting web experiences that not only meet but exceed
-    expectations. Collaboration and communication are at the heart of my work –
-    it's about joining forces to bring visions to life. Beyond the screen, I'm
-    an avid traveler, continuously drawn to new countries and cultures. The
-    comforting aroma of coffee and the soothing sounds of music inspire my
-    personal journey."
-  </p>
-
-  <div class="flex justify-between text-white">
-    <div class="border-pink-300 border">INCLUDE SPOTIFY API</div>
-    <div class="border-pink-300 border">INCLUDE LOCATION SPOTIFY</div>
+<Section sectionClass="about-section" sectionId="about">
+  <SectionTitle client:visible title="Let me introduce myself . " />
+  <q class="quote">Embrace challenges to predict and create your future.</q>
+  <div class="about-me">
+    <div class="about-me_wrapper">
+      <p class="about-me_text">
+        "I'm all about crafting web experiences that not only meet but exceed
+        expectations. Collaboration and communication are at the heart of my
+        work – it's about joining forces to bring visions to life.
+      </p>
+      <div class="separator"></div>
+      <p class="about-me_text">
+        Beyond the screen, I'm an avid traveler, continuously drawn to new
+        countries and cultures. The comforting aroma of coffee and the soothing
+        sounds of music inspire my personal journey."
+      </p>
+    </div>
   </div>
-</section>
+</Section>
 
-<style>
+<style lang="scss">
+  @import "../../styles/_variables.scss";
   section {
     position: relative;
   }
-  img {
-    position: absolute;
-    inset: 0;
-    object-fit: cover;
+  .quote {
+    font-family: $paragraph-font-family;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 200;
+    align-self: flex-end;
+    padding: 1rem;
+    color: $color-secondary;
+  }
+
+  .about-me {
+    flex-grow: 1;
+    display: grid;
+    text-align: center;
+    place-content: center;
+  }
+  .about-me_wrapper {
+    padding-inline: min(10rem, 20vw);
+  }
+  .about-me_text {
+    font-family: $paragraph-font-family;
+    font-size: 1.5rem;
+    font-weight: 200;
+    padding: 1rem;
+    color: $color-secondary;
   }
 </style>
 
