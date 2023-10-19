@@ -1,6 +1,6 @@
 ---
 import Layout from "../layout/Layout.astro";
-import Hero from "../components/Sections/Hero.astro";
+import Hero from "../components/Sections/Hero/Hero.astro";
 import About from "../components/Sections/About.astro";
 import Works from "../components/Sections/Works.astro";
 import Contact from "../components/Sections/Contact.astro";
@@ -8,7 +8,7 @@ import Toolbox from "../components/Sections/Toolbox.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="relative">
+  <main>
     <Hero />
     <About />
     <Toolbox />
@@ -23,7 +23,6 @@ import Toolbox from "../components/Sections/Toolbox.astro";
   main {
     position: relative;
     margin-top: calc(0px - $header-height);
-    background-color: $bg-primary;
   }
   section {
     position: relative;

@@ -1,17 +1,17 @@
-@import "variables.scss";
+@import "./variables.scss";
 
 // TEXT STYLING
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
   color: $headings-color;
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
 }
 
+h3,
+h4,
+h5,
+h6,
 p {
   color: $paragraph-color;
   font-family: $paragraph-font-family;
@@ -26,4 +26,8 @@ html {
 }
 body {
   position: relative;
+  background-color: $color-primary;
+}
+main {
+  overflow: hidden;
 }

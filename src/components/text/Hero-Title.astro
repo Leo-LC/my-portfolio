@@ -1,39 +1,87 @@
 ---
-
+import Cursor from "./Cursor.astro";
 ---
+
+<!-- <p class="smallText"></p>
 
 <h1>
   <span id="hero-title" class="text"></span>
   <span class="cursor">_</span>
 </h1>
+<p class="smallText"></p> -->
+<div class="hero_row">
+  <div class="hero_row_text">
+    <h1>Front-End</h1>
+  </div>
+</div>
+<div class="hero_row">
+  <div class="hero_row_text">
+    <h1>Developer</h1>
+    <Cursor />
+  </div>
+</div>
 
-<style>
-  .title-wrapper {
-  }
+<style is:global lang="scss">
+  @import "../../styles/_variables.scss";
+
+  $title-size: 10rem;
+
   h1 {
     max-width: 10ch;
-    font-size: 8rem;
-    line-height: 1;
-    display: block;
-    min-height: 16rem;
+    font-size: $title-size;
+    line-height: 0.95;
+    text-transform: uppercase;
   }
-
-  .cursor {
-    position: relative;
-    bottom: 22px;
-    opacity: 1;
+  p {
+    font-size: 1.875rem;
+    line-height: 1;
+    padding-left: 0.2rem;
   }
 </style>
 
 <script>
   import gsap from "../../scripts/gsap";
+  // Text to animate
+
+  // Creation of the master timeline
+  let masterTl = gsap.timeline({});
+  const speed = 1;
+
+  //TODO : Changer les animations respectives
+  // Animation "typewriter" du sous-titre
+  /*   const smallTextDocument = document.querySelectorAll(".smallText");
+  smallText.forEach((text, index) => {
+    let smallTextTl = gsap.timeline({});
+
+    smallTextTl.to(smallTextDocument[index], {
+      text: text,
+      duration: speed,
+      ease: "power4.inOut",
+      stagger: 9,
+    });
+
+    masterTl.add(smallTextTl);
+  }); */
 
   // Animation "typewriter" du titre
-  let tl = gsap.timeline({});
-  tl.to("#hero-title", {
-    text: "FRONT-END DEVELOPER",
-    stagger: 1,
-    duration: 3,
-    ease: "power4.inOut",
+  const h1Elements = document.querySelectorAll(
+    ".hero_row_text h1:is(:first-child)",
+  );
+
+  const h1ContentArray = Array.from(
+    h1Elements,
+    (h1Element) => h1Element.textContent,
+  ) as string[];
+
+  // Now, h1ContentArray contains the content of all the <h1> elements
+  console.log(h1ContentArray);
+  let titleTl = gsap.timeline({});
+  h1ContentArray.forEach((text, index) => {
+    titleTl.from(h1Elements[index], {
+      text: "",
+      duration: speed,
+      ease: "steps(10)",
+      stagger: 0,
+    });
   });
 </script>

@@ -1,0 +1,58 @@
+---
+
+---
+
+<div class="grid-container">
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <!-- Add more grid items here -->
+</div>
+
+<style>
+  .grid-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(100px, 1fr)
+    ); /* Adjust the size as needed */
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .grid-item {
+    background-color: #3498db;
+    transition: background-color 0.3s ease; /* Add more transitions for your glowing effect */
+  }
+
+  .grid-item:hover {
+    background-color: #f39c12; /* Change color or add any other effect on hover */
+  }
+</style>
