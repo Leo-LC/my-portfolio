@@ -29,7 +29,7 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
         start: "top",
         end: "bottom",
         scrub: 0.25,
-        markers: true,
+        /*    markers: true, */
         onUpdate: (e) => (direction = e.direction * -1),
       },
       x: -300,
@@ -52,7 +52,7 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
   };
 
   return (
-    <div className={styles.sliderContainer}>
+    <div className={styles.sliderContainer} id="sliderContainer">
       <div ref={slider} className={styles.slider}>
         <h2 data-content={title} ref={firstLine} className={styles.text}>
           {title}

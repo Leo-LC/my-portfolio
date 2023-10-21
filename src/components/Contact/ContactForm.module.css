@@ -1,0 +1,36 @@
+.wrapper {
+  width: 90vw;
+  aspect-ratio: 16/9;
+  border: 1px solid lightblue;
+  border-radius: 3rem;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  display: grid;
+  place-content: center;
+  font-size: 3rem;
+  margin-block: 4rem;
+  background: linear-gradient(
+    180deg,
+    var(--bg-primary) 0%,
+    var(--bg-primary) 80%,
+
+    var(--color-secondary) 110%
+  );
+}
+
+section {
+  height: 100vh;
+}
+
+.origin {
+  border: 2px solid blue;
+  overflow: scroll;
+}
+
+input,
+textarea {
+  background-color: rgb(80, 80, 80);
+}

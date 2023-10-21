@@ -2,11 +2,42 @@
 import SectionTitle from "../Text/SectionTitle/SectionTitle";
 ---
 
-<section id="works" class="relative min-h-screen flex flex-col">
+<section id="works" class="relative min-h-screen flex flex-col overflow-hidden">
   <div class="relative inset-0 pt-[var(--header-height)] text-white">
     <SectionTitle client:visible title="Some of my Recent projects . " />
-
-    <div class="fixed">
+    <div class="wrapper" id="worksScroller">
+      <div class="div numbers">
+        <div class="number">1</div>
+        <div class="number">2</div>
+        <div class="number">3</div>
+      </div>
+      <div class="titres">
+        <div class="titre">TITRE 1</div>
+        <div class="titre">TITRE 2</div>
+        <div class="titre">TITRE 3</div>
+      </div>
+      <div class="works">
+        <div class="work">
+          <div class="work_media">
+            <img src="src/images/Mountain.jpg" alt="" />
+          </div>
+          <div class="work_details">Détails du projet</div>
+        </div>
+        <div class="work">
+          <div class="work_media">
+            <img src="src/images/Mountain.jpg" alt="" />
+          </div>
+          <div class="work_details">Détails du projet</div>
+        </div>
+        <div class="work">
+          <div class="work_media">
+            <img src="src/images/Mountain.jpg" alt="" />
+          </div>
+          <div class="work_details">Détails du projet</div>
+        </div>
+      </div>
+    </div>
+    <!--  <div class="fixed">
       <div class="counter">
         <div class="counter_number">001</div>
         <div class="counter_underline">______</div>
@@ -32,11 +63,11 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle";
         </div>
         <div class="work_details">Détails du projet</div>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>
 
-<style>
+<!-- <style>
   .works_wrapper {
     position: relative;
     width: auto;
@@ -74,4 +105,72 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle";
     border-radius: 2rem;
     overflow: hidden;
   }
+</style> -->
+
+<style>
+  #works {
+    background-color: var(--color-primary);
+  }
+  #worksScroller {
+    overflow: hidden;
+  }
+  .wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+  }
+  .numbers {
+    position: absolute;
+    top: 50%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 2rem;
+  }
+  .titres {
+    position: absolute;
+    top: 50%;
+
+    left: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 2rem;
+  }
+  .works {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, calc(-50% + 28vw));
+  }
+  .work {
+    width: 50vw;
+    aspect-ratio: 16/9;
+    border-radius: 3rem;
+    overflow: hidden;
+  }
 </style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to("#worksScroller", {
+    scrollTrigger: {
+      id: "worksScroller",
+      trigger: "#worksScroller",
+      start: "top 60px",
+      endTrigger: "document",
+      end: "bottom bottom",
+      scrub: true,
+      markers: true,
+    },
+    overflow: "scroll",
+  });
+</script>

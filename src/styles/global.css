@@ -70,6 +70,7 @@ h6 {
 
   /* Manage offsets for the navbar */
   --header-height: 3.75rem;
+  --footer-height: 3.75rem;
 
   /* @media (prefers-color-scheme: dark) {
   :root {
