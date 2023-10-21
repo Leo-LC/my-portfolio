@@ -1,0 +1,77 @@
+---
+import SectionTitle from "../Text/SectionTitle/SectionTitle";
+---
+
+<section id="works" class="relative min-h-screen flex flex-col">
+  <div class="relative inset-0 pt-[var(--header-height)] text-white">
+    <SectionTitle client:visible title="Some of my Recent projects . " />
+
+    <div class="fixed">
+      <div class="counter">
+        <div class="counter_number">001</div>
+        <div class="counter_underline">______</div>
+      </div>
+      <div class="project_title">TITLE OF THE PROJECT</div>
+    </div>
+    <div class="works_wrapper text-white">
+      <div class="work">
+        <div class="work_media">
+          <img src="src/images/Mountain.jpg" alt="" />
+        </div>
+        <div class="work_details">Détails du projet</div>
+      </div>
+      <div class="work">
+        <div class="work_media">
+          <img src="src/images/Mountain.jpg" alt="" />
+        </div>
+        <div class="work_details">Détails du projet</div>
+      </div>
+      <div class="work">
+        <div class="work_media">
+          <img src="src/images/Mountain.jpg" alt="" />
+        </div>
+        <div class="work_details">Détails du projet</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .works_wrapper {
+    position: relative;
+    width: auto;
+    height: calc(100vh - var(--header-height) - 10rem);
+    overflow: hidden;
+    border: 1px solid red;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .fixed {
+    position: absolute;
+    top: 50%;
+    display: flex;
+  }
+
+  .work {
+    position: relative;
+    display: flex;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    width: 60vw;
+    left: 50%;
+
+    border: 1px solid red;
+  }
+  .work_media {
+    aspect-ratio: 16/9;
+    position: relative;
+
+    border-radius: 2rem;
+    overflow: hidden;
+  }
+</style>

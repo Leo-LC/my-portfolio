@@ -1,0 +1,110 @@
+---
+import Cursor from "../Text/Cursor.astro";
+---
+
+<section id="hero" class="relative min-h-screen">
+  <div
+    class="hero_wrapper absolute inset-0 pt-[var(--header-height)] overflow-hidden"
+  >
+    <div class="hero_row justify-end">
+      <p>Stop Scrolling</p>
+    </div>
+    <div class="hero_row relative">
+      <button
+        id="theme-trigger"
+        class="text-white absolute top-[50%] right-[20rem]">TOO DARK ?</button
+      >
+    </div>
+    <div class="hero_row flex flex-col justify-end relative">
+      <h3 class="sticky top-10">Hi, my name is Léo, a passionate</h3>
+    </div>
+    <div class="hero_row">
+      <h1>Front-End</h1>
+    </div>
+    <div class="hero_row">
+      <h1>Developer</h1>
+      <Cursor />
+    </div>
+    <div class="hero_row">
+      <h3>Let's create YOUR web together</h3>
+    </div>
+  </div>
+</section>
+
+<style>
+  #hero {
+    --title-size: 16rem;
+
+    background: #000000;
+  }
+  h1 {
+    color: red;
+    font-size: var(--title-size);
+    line-height: 1;
+    color: var(--headings-color);
+    font-family: var(--headings-font-family);
+    font-weight: var(--headings-font-weight);
+
+    max-width: 10ch;
+    font-size: var(--title-size);
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-size: 3rem;
+    letter-spacing: -0.2rem;
+    line-height: 1;
+    padding-left: 0.2rem;
+  }
+
+  .hero_wrapper {
+    display: grid;
+    /*    grid-template-columns: 60% 40%; */
+
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .hero_row {
+    display: flex;
+  }
+
+  #theme-trigger {
+  }
+
+  .first-hero-row {
+    border:;
+  }
+
+  .hero_row_text {
+    display: flex;
+    width: 100%;
+    height: inherit;
+    overflow: hidden;
+  }
+</style>
+
+<!-- Parallax Styling -->
+<style>
+  .hero_media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .hero_image {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .hero_image-parallax {
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+  }
+</style>

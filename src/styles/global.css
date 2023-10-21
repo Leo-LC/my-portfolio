@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+:root {
+  --color-primary: #1e1e1e;
+  --color-primary-faded: rgba(30, 30, 30, 0.43) e;
+  --color-secondary: #929292;
+  --color-accent: #ff3693;
+
+  --bg-primary: var(--color-primary);
+
+  --link-color: var(--color-secondary);
+  --link-color-hover: white;
+  --link-color-active: var(--color-accent);
+  --link-decoration: none;
+  --link-transition: all 0.3s ease-in-out;
+
+  --headings-color: var(--color-secondary);
+  --headings-font-family: "Anton", sans-serif;
+  --headings-font-weight: 700;
+
+  --paragraph-color: var(--color-secondary);
+  --paragraph-font-family: "Mulish", sans-serif;
+  --paragraph-font-weight: 400;
+
+  /* Manage offsets for the navbar */
+  --header-height: 3.75rem;
+
+  /* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }*/
+}
+
+body {
+  background-color: var(--bg-primary);
+  position: relative;
+}
+/*  TEXT STYLING */
+
+h2 {
+  color: var(--headings-color);
+  font-family: var(--headings-font-family);
+  font-weight: var(--headings-font-weight);
+}
+
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--paragraph-color);
+  font-family: var(--paragraph-font-family);
+  font-weight: var(--paragraph-font-weight);
+}

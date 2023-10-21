@@ -1,10 +1,10 @@
 ---
 import Layout from "../layout/Layout.astro";
-import Hero from "../components/Sections/Hero/Hero.astro";
-import About from "../components/Sections/About.astro";
-import Works from "../components/Sections/Works.astro";
-import Contact from "../components/Sections/Contact.astro";
-import Toolbox from "../components/Sections/Toolbox.astro";
+import Hero from "../components/Hero/Hero.astro";
+import About from "../components/About/About.astro";
+import Works from "../components/Works/Works.astro";
+import Contact from "../components/Contact/Contact.astro";
+import Toolbox from "../components/Toolbox/Toolbox.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -17,19 +17,39 @@ import Toolbox from "../components/Sections/Toolbox.astro";
   </main>
 </Layout>
 
-<style lang="scss" is:global>
-  @import "../styles/variables.scss";
-
+<style>
   main {
     position: relative;
-    margin-top: calc(0px - $header-height);
-  }
-  section {
-    position: relative;
-    display: flex;
-    padding-top: $header-height;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    margin-top: calc(0px - var(--header-height));
+    overflow: hidden;
   }
 </style>
+
+<script>
+  /* import Lenis from "@studio-freight/lenis";
+  import React from "react";
+  import { useEffect } from "react";
+  import gsap from "gsap";
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    lenis.on("scroll", (e: any) => {
+      console.log(e);
+    });
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    lenis.on("scroll", ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
+    requestAnimationFrame(raf);
+  }, []); */
+</script>

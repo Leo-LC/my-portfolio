@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import styles from "./SectionTitle.module.scss";
+import styles from "./SectionTitle.module.css";
 
 interface Props {
   title: string;
@@ -16,7 +16,7 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
 
   let xPercent = 0;
   let direction = -1;
-  const speed = 0.1;
+  const speed = 0;
 
   //Call animation on mount and handles the reverse animation on scroll
   useEffect(() => {
