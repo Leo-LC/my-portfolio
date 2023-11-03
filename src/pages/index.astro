@@ -5,14 +5,17 @@ import About from "../components/About/About.astro";
 import Works from "../components/Works/Works.astro";
 import Contact from "../components/Contact/Contact.astro";
 import Toolbox from "../components/Toolbox/Toolbox.astro";
+/* import Cursor from "../components/Cursor/Cursor.tsx"; */
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
+    <!--     <Cursor client:load /> -->
     <Hero />
     <About />
     <Toolbox />
     <Works />
+
     <Contact />
   </main>
 </Layout>
@@ -20,9 +23,48 @@ import Toolbox from "../components/Toolbox/Toolbox.astro";
 <style>
   main {
     position: relative;
-    margin-top: calc(0px - var(--header-height));
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+  }
+  html {
+    overscroll-behavior: auto;
   }
 </style>
 
-<script></script>
+<!-- Lenis Base CSS -->
+<style is:global>
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  import Lenis from "@studio-freight/lenis";
+  const lenis = new Lenis();
+
+  lenis.on("scroll", (e: Lenis) => {});
+
+  function raf(time: number) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>

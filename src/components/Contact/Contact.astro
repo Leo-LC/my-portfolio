@@ -3,19 +3,55 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle";
 import ContactForm from "./ContactForm.tsx";
 ---
 
-<section
-  id="contact"
-  class="relative flex flex-col min-h-screen overflow-hidden"
->
-  <div
-    class="contact_wrapper absolute inset-0 pt-[var(--header-height)] overflow-hidden flex flex-col"
-  >
-    <SectionTitle client:visible title="Want to reach me ? " />
+<section id="contact" class="relative pt-[var(--header-height)] flex flex-col">
+  <SectionTitle client:visible title="Want to reach me ? " />
+  <div class="wrapper" id="contact-wrapper">
     <ContactForm client:load />
   </div>
+  <style>
+    section {
+      background-color: var(--bg-primary);
+      height: calc(100vh - var(--footer-height));
+    }
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+      padding-block: 3rem;
+
+      margin: auto;
+      aspect-ratio: 16/9;
+      text-align: center;
+
+      border: 1px solid var(--accent-border-subtle);
+      border-radius: 3rem;
+
+      background: linear-gradient(
+        to top,
+        var(--bg-primary) 0%,
+        var(--bg-primary) 100% opacity: 0.5;
+      );
+    }
+  </style>
+
+  <script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    /*   let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#contact",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      pin: true,
+
+      markers: true,
+    },
+  }); */
+  </script>
 </section>
-<style>
-  .contact_wrapper {
-    padding-top: calc(var(--header-height) + var(--footer-height));
-  }
-</style>

@@ -1,0 +1,46 @@
+---
+
+---
+
+<!-- TODO : Theme trigger -->
+<button
+  id="theme-trigger"
+  class="fixed z-10 top-[25%] right-[20%] flex items-center"
+>
+  <span class="grow shrink-0">TOO DARK ?</span>
+  <svg
+    class="relative grow shrink-0"
+    viewBox="0 0 200 200"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="var(--accent-component-bg"
+      d="M64.5,-0.3C64.5,32,32.2,64,0.1,64C-32.1,64,-64.2,32,-64.2,-0.3C-64.2,-32.5,-32.1,-65,0.1,-65C32.2,-65,64.5,-32.5,64.5,-0.3Z"
+      transform="translate(100 100)"></path>
+  </svg>
+</button>
+
+<style>
+  span {
+    font-family: var(--headings-font-family);
+    color: var(--text-secondary);
+    font-size: 3rem;
+    z-index: 1;
+  }
+  svg {
+    position: absolute;
+    transform: translateX(18%);
+    scale: 1.2;
+  }
+</style>
+
+<script>
+  const themeTrigger = document.getElementById(
+    "theme-trigger",
+  ) as HTMLButtonElement;
+  const body = document.body;
+
+  themeTrigger.addEventListener("click", () => {
+    body.classList.toggle("dark");
+  });
+</script>

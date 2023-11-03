@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+/* Radix themes */
+@import "@radix-ui/themes/styles.css";
+/* Radix Color Palette */
+@import "@radix-ui/colors/slate.css";
+@import "@radix-ui/colors/slate-dark.css";
+@import "@radix-ui/colors/cyan.css";
+@import "@radix-ui/colors/cyan-dark.css";
 
 /*
   Josh's Custom CSS Reset
@@ -46,23 +53,40 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/*  CUSTOM STYLING */
 :root {
-  --color-primary: #1e1e1e;
-  --color-primary-faded: rgba(30, 30, 30, 0.43) e;
-  --color-secondary: #929292;
-  --color-accent: #ff3693;
+  --bg-primary: var(--slate-1);
+  --bg-secondary: var(--slate-2);
+  --text-primary: var(--slate-12);
+  --text-secondary: var(--slate-11);
+  --component-bg: var(--slate-3);
+  --component-bg-hover: var(--slate-4);
+  --component-bg-active: var(--slate-5);
+  --border-subtle: var(--slate-6);
+  --border-primary: var(--slate-7);
+  --border-strong: var(--slate-8);
+  --bg-solid-primary: var(--slate-9);
+  --bg-solid-secondary: var(--slate-10);
 
-  --bg-primary: var(--color-primary);
+  --accent-bg-primary: var(--cyan-1);
+  --accent-bg-secondary: var(--cyan-2);
+  --accent-text-primary: var(--cyan-12);
+  --accent-text-secondary: var(--cyan-11);
+  --accent-component-bg: var(--cyan-3);
+  --accent-component-bg-hover: var(--cyan-4);
+  --accent-component-bg-active: var(--cyan-5);
+  --accent-border-subtle: var(--cyan-6);
+  --accent-border-primary: var(--cyan-7);
+  --accent-border-strong: var(--cyan-8);
+  --accent-bg-solid-primary: var(--cyan-9);
+  --accent-bg-solid-secondary: var(--cyan-10);
 
-  --link-color: var(--color-secondary);
-  --link-color-hover: white;
-  --link-color-active: var(--color-accent);
-  --link-decoration: none;
-  --link-transition: all 0.3s ease-in-out;
-
-  --headings-color: var(--color-secondary);
+  /* Headings */
+  --headings-color: var(--slate-12);
   --headings-font-family: "Anton", sans-serif;
   --headings-font-weight: 700;
+  --h1-font-size: 12rem;
 
   --paragraph-color: var(--color-secondary);
   --paragraph-font-family: "Mulish", sans-serif;
@@ -71,23 +95,50 @@ h6 {
   /* Manage offsets for the navbar */
   --header-height: 3.75rem;
   --footer-height: 3.75rem;
+}
 
-  /* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }*/
+/*  DARK THEME */
+.dark {
+  --bg-primary: var(--slate-2);
+  --bg-secondary: var(--slate-1);
+  --text-primary: var(--slate-12);
+  --text-secondary: var(--slate-11);
+  --component-bg: var(--slate-3);
+  --component-bg-hover: var(--slate-4);
+  --component-bg-active: var(--slate-5);
+  --border-subtle: var(--slate-6);
+  --border-primary: var(--slate-7);
+  --border-strong: var(--slate-8);
+  --bg-solid-primary: var(--slate-9);
+  --bg-solid-secondary: var(--slate-10);
+
+  --accent-bg-primary: var(--cyan-1);
+  --accent-bg-secondary: var(--cyan-2);
+  --accent-text-primary: var(--cyan-12);
+  --accent-text-secondary: var(--cyan-11);
+  --accent-component-bg: var(--cyan-3);
+  --accent-component-bg-hover: var(--cyan-4);
+  --accent-component-bg-active: var(--cyan-5);
+  --accent-border-subtle: var(--cyan-6);
+  --accent-border-primary: var(--cyan-7);
+  --accent-border-strong: var(--cyan-8);
+  --accent-bg-solid-primary: var(--cyan-9);
+  --accent-bg-solid-secondary: var(--cyan-10);
 }
 
 body {
-  background-color: var(--bg-primary);
   position: relative;
+  overflow: hidden;
 }
+
+body .wrapper {
+  background-color: var(--bg-primary);
+}
+
 /*  TEXT STYLING */
 
 h2 {
-  color: var(--headings-color);
+  color: var(--slate-12);
   font-family: var(--headings-font-family);
   font-weight: var(--headings-font-weight);
 }
@@ -97,7 +148,30 @@ h4,
 h5,
 h6,
 p {
-  color: var(--paragraph-color);
+  color: var(--text-primary);
   font-family: var(--paragraph-font-family);
   font-weight: var(--paragraph-font-weight);
+}
+/* Links */
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent-text-primary);
+}
+
+a:active {
+  color: var(--accent-text-secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  pointer-events: none;
 }

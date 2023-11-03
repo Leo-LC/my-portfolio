@@ -1,126 +1,84 @@
 //Framer Motion
 
-import s from "./ContactForm.module.css";
-import { useEffect } from "react";
+import styles from "./ContactForm.module.css";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { useForm } from "react-hook-form";
+import type { InputType } from "zlib";
 
 const ContactForm = () => {
   //BASIC ANIMATION
-  useEffect(() => {
-    gsap.from("#contactForm", {
+  /*  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from("#contact-wrapper", {
       scrollTrigger: {
-        id: "contactForm",
-        trigger: "#contactForm",
+        id: "contact-wrapper",
+        trigger: "#contact-wrapper",
         start: "top center",
-        end: "top top",
-        scrub: 2,
-        markers: {
-          startColor: "white",
-          endColor: "white",
-          fontSize: "18px",
-          fontWeight: "bold",
-          indent: 20,
-        },
+        end: "+=1000",
+        scrub: 1,
+
+        markers: true,
       },
       scale: 2,
       opacity: 0,
       border: "1px solid transparent",
     });
-  }, []);
-
-  // SNAPPED ANIMATION
-  /*  useEffect(() => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#contactForm",
-        start: "top center",
-        end: "top top",
-        scrub: 2,
-        markers: true,
-        snap: {
-          snapTo: "labels",
-          duration: { min: 0.2, max: 0.5 },
-          delay: 0.2,
-          ease: "power2.inOut",
-        },
-      },
-    });
-
-    tl.addLabel("scale")
-      .from("#contactForm", {
-        scale: 2,
-      })
-      .addLabel("opacity")
-      .from("#contactForm", {
-        opacity: 0,
-      })
-      .addLabel("border")
-      .from("#contactForm", {
-        border: "1px solid transparent",
-      });
   }, []); */
 
+  /*   const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data); */
+  /*   console.log(errors); */
+
+  const formAction =
+    "https://public.herotofu.com/v1/84da5320-74b4-11ee-80c8-136eb968d513";
+
   return (
-    <div className={s.wrapper} id="contactForm">
-      Hello World
-    </div>
+    <form
+      action={formAction}
+      method="post"
+      acceptCharset="UTF-8"
+      /*       onSubmit={handleSubmit} */
+    >
+      <div className="flex flex-col items-start">
+        <label htmlFor="name">Your Name</label>
+        <input name="Name" id="name" type="text" required />
+      </div>
+      <div className="flex flex-col items-start">
+        <label htmlFor="email">Your Email</label>
+        <input name="Email" id="email" type="email" required />
+      </div>
+      <div className="flex flex-col items-start">
+        <label htmlFor="message">Your Message</label>
+
+        <textarea name="Message" id="message" required rows={4}></textarea>
+      </div>
+      <div>
+        <input
+          className={styles.button}
+          type="submit"
+          value="Send your message"
+        />
+        {/* Bot protection */}
+        <div
+          style={{
+            textIndent: "-99999px",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            position: "absolute",
+          }}
+          aria-hidden="true"
+        >
+          <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" />
+        </div>
+      </div>
+    </form>
   );
-
-  /* <div className={s.wrapper}>
-      <h3>Let's connect</h3>
-      <form className="flex flex-col gap-4">
-        <div className="flex gap-4">
-          <div>
-            <input
-              type="text"
-              name="name"
-              id="firstName"
-              placeholder="Your First Name"
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              name="name"
-              id="lastName"
-              placeholder="Your Last Name"
-            />
-          </div>
-        </div>
-
-        <div>
-          <input
-            className="w-full"
-            type="email"
-            name="mail"
-            id="mail"
-            placeholder="Your email"
-          />
-        </div>
-
-        <div>
-          <textarea
-            className="w-full"
-            name="message"
-            id="message"
-            cols={30}
-            rows={10}
-            placeholder="Your message"
-          ></textarea>
-        </div>
-
-        <div>
-          <button className="active:bg-blue-600 hover:shadow-lg focus:outline-none px-6 py-3 mb-1 mr-1 text-sm font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded shadow outline-none">
-            Send
-          </button>
-        </div>
-
-        <p>Available from XX</p>
-      </form>
-    </div> */
-  /*   ); */
 };
 
 export default ContactForm;

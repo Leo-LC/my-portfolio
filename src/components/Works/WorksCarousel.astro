@@ -1,0 +1,170 @@
+---
+/* import "@splidejs/splide/css"; */
+import "@splidejs/splide/css/skyblue";
+---
+
+<ul class="wrapper">
+  <li class="item">
+    <div class="image-bg">
+      <img src="" alt="" />
+    </div>
+    <p>ITEM 1</p>
+    <p>Description du blablabla</p>
+  </li>
+  <li class="item" id="item1">
+    <div class="image-bg">
+      <img src="" alt="" />
+    </div><p>ITEM 2</p>
+    <p>Description du blablabla</p>
+  </li>
+  <li class="item">
+    <div class="image-bg">
+      <img src="" alt="" />
+    </div><p>ITEM 3</p>
+    <p>Description du blablabla</p>
+  </li>
+</ul>
+
+<!-- <ul class="works-wrapper">
+  <li class="work">
+    <div class="work_media">
+      <img src="src/images/Mountain.jpg" alt="" />
+    </div>
+  </li>
+  <li class="work">
+    <div class="work_media">
+      <img src="src/images/Mountain.jpg" alt="" />
+    </div>
+  </li>
+  <li class="work">
+    <div class="work_media">
+      <img src="src/images/Mountain.jpg" alt="" />
+    </div>
+  </li>
+</ul> --><!-- <section class="splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide work">
+        <div class="work_media">
+          <img src="src/images/Mountain.jpg" alt="" />
+        </div>
+      </li>
+      <li class="splide__slide work">
+        <div class="work_media">
+          <img src="src/images/Mountain.jpg" alt="" />
+        </div>
+      </li>
+      <li class="splide__slide work">
+        <div class="work_media">
+          <img src="src/images/Mountain.jpg" alt="" />
+        </div>
+      </li>
+    </ul>
+  </div>
+</section> --><!-- <script>
+  import "@splidejs/splide/css";
+  import Splide from "@splidejs/splide";
+
+  var splide = new Splide(".splide", {
+    direction: "ttb",
+    height: "80vh",
+    wheel: true,
+    wheelSleep: 500,
+    perMove: 1,
+    arrows: false,
+  });
+  splide.mount();
+</script> -->
+<style>
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    border: 2px solid lightblue;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-rows: repeat(3, 1fr);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .item {
+    position: relative;
+    z-index: 10;
+    border: 1px solid red;
+    color: white;
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .image-bg {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(105, 86, 86, 0.099);
+    z-index: -1;
+  }
+
+  .wrapper:hover {
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+</style>
+
+<script>
+  /*  import Lenis from "@studio-freight/lenis";
+
+    const wrapper = document.querySelector(".works-wrapper") as HTMLElement;
+    const content = document.querySelector(".works-inner") as HTMLElement;
+
+    // Initialize Lenis
+
+    let lenisInstance = new Lenis({
+      wrapper: wrapper,
+      content: content,
+      orientation: "vertical",
+    });
+
+    function raf(time: number) {
+      lenisInstance?.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf); */
+</script>
+<style>
+  .works-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 100vw;
+    height: auto;
+    border: 2px solid red;
+  }
+
+  .work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+
+    flex: 1 0 auto;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    border: 2px solid blue;
+  }
+
+  .work_details {
+    color: white;
+    font-size: 2rem;
+  }
+
+  .work_media {
+    width: 50%;
+    aspect-ratio: 16/9;
+    border-radius: 3rem;
+    overflow: hidden;
+  }
+</style>

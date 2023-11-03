@@ -1,0 +1,38 @@
+---
+const { text } = Astro.props;
+---
+
+<p class="details_text" id="target">
+  {text}
+</p>
+
+<style>
+  .details_text {
+    max-width: 80ch;
+    font-size: 2rem;
+    line-height: 1.3;
+    letter-spacing: -0.1rem;
+    font-weight: 200;
+    padding: 1rem;
+  }
+</style>
+
+<script>
+  import "splitting/dist/splitting.css";
+  import "splitting/dist/splitting-cells.css";
+  import Splitting from "splitting";
+  import gsap from "gsap";
+
+  const targets = document.querySelectorAll(".details_text");
+
+  targets.forEach((target) => {
+    const results = Splitting({ target: target, by: "lines" }) as any;
+    const lines = results[0].lines;
+    gsap.from(lines, {
+      duration: 0.2,
+      opacity: 0,
+      stagger: 0.1,
+      ease: "power2.out",
+    });
+  });
+</script>

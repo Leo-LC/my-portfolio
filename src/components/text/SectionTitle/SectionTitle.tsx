@@ -16,7 +16,7 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
 
   let xPercent = 0;
   let direction = -1;
-  const speed = 0;
+  const speed = 0.1;
 
   //Call animation on mount and handles the reverse animation on scroll
   useEffect(() => {
@@ -47,12 +47,15 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
     gsap.set(firstLine.current, { xPercent: xPercent });
     gsap.set(secondLine.current, { xPercent: xPercent });
     gsap.set(thirdLine.current, { xPercent: xPercent });
-    xPercent += speed * direction;
+    xPercent += (speed * direction) / 4;
     requestAnimationFrame(animation);
   };
 
   return (
-    <div className={styles.sliderContainer} id="sliderContainer">
+    <div
+      className={`${styles.sliderContainer} section-title`}
+      id="sliderContainer"
+    >
       <div ref={slider} className={styles.slider}>
         <h2 data-content={title} ref={firstLine} className={styles.text}>
           {title}
