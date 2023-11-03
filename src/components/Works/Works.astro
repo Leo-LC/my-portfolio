@@ -5,17 +5,17 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle";
 <section id="works" class="relative min-h-screen flex flex-col overflow-hidden">
   <div class="relative inset-0 pt-[var(--header-height)] text-white">
     <SectionTitle client:visible title="Some of my Recent projects . " />
+    <div class="div numbers">
+      <div class="number">1</div>
+      <div class="number">2</div>
+      <div class="number">3</div>
+    </div>
+    <div class="titres">
+      <div class="titre">TITRE 1</div>
+      <div class="titre">TITRE 2</div>
+      <div class="titre">TITRE 3</div>
+    </div>
     <div class="wrapper" id="worksScroller">
-      <div class="div numbers">
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-      </div>
-      <div class="titres">
-        <div class="titre">TITRE 1</div>
-        <div class="titre">TITRE 2</div>
-        <div class="titre">TITRE 3</div>
-      </div>
       <div class="works">
         <div class="work">
           <div class="work_media">
@@ -161,7 +161,8 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle";
   import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to("#worksScroller", {
+  //TODO : use as a base for simple parallax
+  /*   gsap.to(".works", {
     scrollTrigger: {
       id: "worksScroller",
       trigger: "#worksScroller",
@@ -169,6 +170,18 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle";
       endTrigger: "document",
       end: "bottom bottom",
       scrub: true,
+      markers: true,
+    },
+    y: 300,
+  }); */
+  gsap.to("#worksScroller", {
+    scrollTrigger: {
+      id: "worksScroller",
+      trigger: "#worksScroller",
+      start: "top 60px",
+      endTrigger: "document",
+      end: "bottom bottom",
+      scrub: false,
       markers: true,
     },
     overflow: "scroll",
