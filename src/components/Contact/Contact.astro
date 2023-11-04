@@ -3,7 +3,10 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle";
 import ContactForm from "./ContactForm.tsx";
 ---
 
-<section id="contact" class="relative pt-[var(--header-height)] flex flex-col">
+<section
+  id="contact"
+  class="relative pt-[var(--header-height)] flex flex-col gap-8 overflow-hidden"
+>
   <SectionTitle client:visible title="Want to reach me ? " />
   <div class="wrapper" id="contact-wrapper">
     <ContactForm client:load />
@@ -15,19 +18,21 @@ import ContactForm from "./ContactForm.tsx";
     }
     .wrapper {
       position: relative;
+      align-self: center;
+      justify-self: center;
+      /* flex-grow: 1; */
+      width: 80vw;
       z-index: 1;
       display: flex;
-
       align-items: center;
       justify-content: center;
       padding-block: 3rem;
 
-      margin: auto;
-      aspect-ratio: 16/9;
-      text-align: center;
-
       border: 1px solid var(--accent-border-subtle);
       border-radius: 3rem;
+      overflow: hidden;
+      max-width: 70vw;
+      aspect-ratio: 16/9;
 
       background: linear-gradient(
         to top,

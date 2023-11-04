@@ -147,7 +147,8 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+span {
   color: var(--text-primary);
   font-family: var(--paragraph-font-family);
   font-weight: var(--paragraph-font-weight);

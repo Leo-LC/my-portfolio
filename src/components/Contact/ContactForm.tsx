@@ -58,12 +58,8 @@ const ContactForm = () => {
 
         <textarea name="Message" id="message" required rows={4}></textarea>
       </div>
-      <div>
-        <input
-          className={styles.button}
-          type="submit"
-          value="Send your message"
-        />
+      <div className={styles.button}>
+        <input type="submit" value="Send your message" />
         {/* Bot protection */}
         <div
           style={{

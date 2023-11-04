@@ -1,19 +1,19 @@
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 3rem;
   font-family: var(--paragraph-font-family);
   font-size: 1rem;
   min-width: 30vw;
+  color: var(--text-primary);
 }
-label {
-  color: white;
-}
+
 input:not([type="submit"]),
 textarea {
   background-color: transparent;
-  border-bottom: 1px solid white;
-  color: white;
+  border-bottom: 1px solid var(--border-strong);
+
   width: 100%;
 }
 

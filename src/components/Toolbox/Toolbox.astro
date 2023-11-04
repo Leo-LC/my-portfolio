@@ -5,11 +5,11 @@ import TechCard from "./TechCard.astro";
 
 <section
   id="toolbox"
-  class="relative min-h-screen pt-[var(--header-height)] overflow-hidden snap-start justify-center"
+  class="relative min-h-screen pt-[var(--header-height)] overflow-hidden snap-start flex flex-col gap-8"
 >
   <SectionTitle client:visible title="My Front-End Toolbox . " />
   <div
-    class="toolbox_wrapper relative inset-0 flex flex-col gap-4 items-center top-10"
+    class="toolbox_wrapper relative inset-0 flex flex-col gap-4 justify-center items-center top-10"
   >
     <TechCard />
 

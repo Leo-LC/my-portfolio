@@ -1,0 +1,53 @@
+---
+const { name, date, src } = Astro.props;
+---
+
+<div class="card flex flex-col gap-2" data-active="true">
+  <div class="image">
+    <img src={src} alt="" />
+  </div>
+  <div class="text flex justify-between">
+    <div class="text_name">
+      <p>{name}</p>
+    </div>
+    <div class="text_date">
+      <p>{date}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .image {
+    position: relative;
+    z-index: 1;
+    border-radius: 3rem;
+    overflow: hidden;
+  }
+  img {
+    object-fit: cover;
+    width: 25vw;
+    aspect-ratio: 4/6;
+  }
+
+  .text {
+    color: white;
+    padding-inline: 0.5rem;
+  }
+
+  .card {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .card[data-active="true"] {
+    opacity: 1;
+  }
+
+  .card[data-active="false"] {
+    opacity: 0.1;
+  }
+</style>
+
+<script>
+
+</script>
