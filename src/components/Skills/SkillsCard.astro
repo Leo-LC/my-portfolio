@@ -2,7 +2,7 @@
 
 ---
 
-<div class="cards">
+<div class="cards-wrapper">
   <div class="card">
     <div class="card_content">
       <i class="fa-brands fa-react"></i>
@@ -199,7 +199,7 @@
 </div>
 
 <style>
-  .cards {
+  .cards-wrapper {
     display: grid;
     grid-template-columns: repeat(8, 10vw);
     grid-auto-rows: 10vw;
@@ -209,7 +209,7 @@
     z-index: 1;
   }
 
-  .cards:hover .card {
+  .cards-wrapper:hover .card {
     background: radial-gradient(
       800px circle at var(--xPos) var(--yPos),
       var(--cyan-a8),
@@ -297,7 +297,7 @@
   const cards = document.querySelectorAll(
     ".card",
   ) as NodeListOf<HTMLDivElement>;
-  const wrapper = document.querySelector(".cards") as HTMLDivElement;
+  const wrapper = document.querySelector(".cards-wrapper") as HTMLDivElement;
 
   wrapper?.addEventListener("mousemove", (event) => {
     cards.forEach((card) => {

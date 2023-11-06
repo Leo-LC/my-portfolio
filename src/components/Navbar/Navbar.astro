@@ -4,10 +4,10 @@
 
 <div class="wrapper-navbar h-full">
   <nav class="text-gray-400 flex justify-between">
-    <div><a href="#hero" id="nametag">LEO LECEE</a></div>
+    <a class="nav-item" href="#hero" id="nametag">LEO LECEE</a>
     <div class="flex">
       <a class="nav-item" href="#about">ABOUT.</a>
-      <a class="nav-item" href="#toolbox">SKILLS.</a>
+      <a class="nav-item" href="#skills">SKILLS.</a>
       <a class="nav-item" href="#works">WORKS.</a>
       <a class="nav-item" href="#contact">CONTACT.</a>
     </div>
@@ -26,9 +26,12 @@
   }
 
   a {
-    transition: var(--link-transition);
     font-size: 4rem;
     line-height: 1;
+  }
+
+  a:hover {
+    letter-spacing: 1px;
   }
 </style>
 
@@ -49,21 +52,6 @@
   tl.to(".blur", {
     opacity: 1,
   });
-  /* 
-  let navItems = document.querySelectorAll(".nav-item");
-
-  gsap.fromTo(
-    navItems,
-    {
-      y: 60,
-    },
-    {
-      y: 0,
-      stagger: 0.1,
-      delay: 1,
-      duration: 0.5,
-    },
-  ); */
 </script>
 
 <!-- Lenis scrollTo -->

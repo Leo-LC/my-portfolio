@@ -2,10 +2,10 @@
 
 ---
 
-<h1 class="cursor pl-1">_</h1>
+<h1 id="title-cursor" class="pl-1">_</h1>
 
 <style>
-  .cursor {
+  #title-cursor {
     font-family: var(--headings-font-family);
     font-size: var(--h1-font-size);
     color: var(--text-primary);
@@ -17,9 +17,9 @@
 <script>
   import gsap from "../../scripts/gsap";
 
-  const cursor = document.querySelector(".cursor");
+  const cursor = document.querySelector("#title-cursor");
   gsap.from(cursor, {
-    delay: 2,
+    delay: 4,
     opacity: 0,
     ease: "power2.inOut",
     repeat: -1,

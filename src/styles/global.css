@@ -132,7 +132,11 @@ body {
 }
 
 body .wrapper {
-  background-color: var(--bg-primary);
+  background: linear-gradient(
+    to bottom,
+    var(--accent-bg-primary) 0%,
+    var(--bg-primary) 100%
+  );
 }
 
 /*  TEXT STYLING */

@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+import Layout from "../layout/Layout404.astro";
+---
+
+<Layout title="Page not found">
+  <div class="wrapper">
+    <h1 class="text-9xl">404</h1>
+    <h2 class="text-9xl">Page not found</h2>
+    <p class="text-xl">I am sorry, this page does not exist yet.</p>
+    <p class="text-xl">Please let me redirect you</p>
+    <a href="/">Click Here</a>
+  </div>
+</Layout>
+
+<style>
+  .wrapper {
+    background-color: var(--bg-primary);
+    height: 100vh;
+    display: grid;
+    gap: 1rem;
+    place-content: center;
+    text-align: center;
+    color: var(--text-primary);
+  }
+</style>

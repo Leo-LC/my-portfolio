@@ -2,45 +2,90 @@
 
 ---
 
-<!-- TODO : Theme trigger -->
 <button
   id="theme-trigger"
-  class="fixed z-10 top-[25%] right-[20%] flex items-center"
+  class="absolute z-10 top-[25%] right-0 flex items-center"
 >
-  <span class="grow shrink-0">TOO DARK ?</span>
-  <svg
-    class="relative grow shrink-0"
-    viewBox="0 0 200 200"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill="var(--accent-component-bg"
-      d="M64.5,-0.3C64.5,32,32.2,64,0.1,64C-32.1,64,-64.2,32,-64.2,-0.3C-64.2,-32.5,-32.1,-65,0.1,-65C32.2,-65,64.5,-32.5,64.5,-0.3Z"
-      transform="translate(100 100)"></path>
-  </svg>
+  <span>TOO&nbsp;</span>
+  <span class="relative" id="theme-trigger_text"></span>
+  <!--   <div class="blob">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M64.5,-0.3C64.5,32,32.2,64,0.1,64C-32.1,64,-64.2,32,-64.2,-0.3C-64.2,-32.5,-32.1,-65,0.1,-65C32.2,-65,64.5,-32.5,64.5,-0.3Z"
+        transform="translate(100 100)"></path>
+    </svg>
+  </div> -->
 </button>
 
 <style>
+  button {
+  }
   span {
+    position: relative;
     font-family: var(--headings-font-family);
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-size: 3rem;
     z-index: 1;
   }
-  svg {
+
+  #theme-trigger_text::before {
+    content: "";
     position: absolute;
-    transform: translateX(18%);
-    scale: 1.2;
+    inset: 0;
+    z-index: -1;
+    width: 110%;
+    transform: translateX(-5%);
+    background-color: var(--bg-solid-primary);
   }
+  /*   #theme-trigger_text:hover {
+    background-color: var(--accent-component-bg);
+    background-size: 100% 100%;
+    transition: background-size 0.5s ease-in-out;
+  } */
+
+  /*   .blob {
+    position: absolute;
+    width: 100%;
+
+    transform: translateX(17%);
+    animation: spin 30s linear infinite;
+  }
+  svg {
+    scale: 1.2;
+    fill: var(--accent-component-bg);
+  }
+
+  @keyframes spin {
+    0% {
+      transform: translateX(17%) rotate(0deg);
+    }
+    100% {
+      transform: translateX(17%) rotate(360deg);
+    }
+  } */
 </style>
 
 <script>
+  const body = document.body;
+
   const themeTrigger = document.getElementById(
     "theme-trigger",
   ) as HTMLButtonElement;
-  const body = document.body;
+
+  const buttonText = themeTrigger.querySelector(
+    "#theme-trigger_text",
+  ) as HTMLSpanElement;
+
+  const updateButtonText = () => {
+    buttonText.textContent = document.body.classList.contains("dark")
+      ? "DARK ?"
+      : "LIGHT ?";
+  };
+
+  updateButtonText();
 
   themeTrigger.addEventListener("click", () => {
     body.classList.toggle("dark");
+    updateButtonText();
   });
 </script>

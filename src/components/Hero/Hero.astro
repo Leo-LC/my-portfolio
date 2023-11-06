@@ -3,32 +3,41 @@ import Cursor from "../Text/Cursor.astro";
 import ThemeSwitch from "./ThemeSwitch.astro";
 ---
 
+<!-- <div class="loader text-8xl grid place-content-center">WELCOME</div> -->
 <section id="hero" class="relative min-h-screen snap-start">
-  <!-- <div class="background" data-scroll data-scroll-speed="0.8">
-    <img class="thumbnail" src="src/images/Abstract Wallpaper.jpg" alt="" />
-  </div> -->
   <div
     class="hero_wrapper absolute inset-0 pt-[var(--header-height)] overflow-hidden"
   >
     <div class="flex justify-end">
       <!--       <p>Stop Scrolling</p> -->
     </div>
-    <ThemeSwitch />
+    <div class="flex">
+      <ThemeSwitch />
+    </div>
     <div class="flex items-end">
-      <h3 class="sticky top-10">
-        <span class="">Hi</span>, my name is <span class="accent">Léo</span>, a
-        passionate
-      </h3>
+      <div class="clip">
+        <h3 id="first-line">
+          Hi my name is <span class="accent">Léo</span>, a passionate
+        </h3>
+      </div>
     </div>
     <div class="flex">
-      <h1>Front-End</h1>
+      <div class="clip">
+        <h1>Front-End</h1>
+      </div>
     </div>
     <div class="flex">
-      <h1>Developer</h1>
+      <div class="clip">
+        <h1>Developer</h1>
+      </div>
       <Cursor />
     </div>
     <div class="flex">
-      <h3>Let's create <span class="accent">YOUR</span> web together</h3>
+      <div class="clip">
+        <h3 id="last-line">
+          Let's create <span class="accent">YOUR</span> web together
+        </h3>
+      </div>
     </div>
   </div>
 </section>
@@ -41,9 +50,38 @@ import ThemeSwitch from "./ThemeSwitch.astro";
 </script>
 
 <style>
-  section {
-    background-color: var(--bg-primary);
+  /* section {
+    background: radial-gradient(
+      var(--bg-primary) 0%,
+      var(--bg-primary) 30%,
+      var(--accent-text-primary) 100%
+    );
+    background-size: 150vw 150vw;
+
+    animation: movingGradient 30s linear infinite forwards;
   }
+
+  @keyframes movingGradient {
+    0% {
+      background-position: 50% 50%;
+    }
+    20% {
+      background-position: var(--pos-20);
+    }
+    40% {
+      background-position: var(--pos-40);
+    }
+    60% {
+      background-position: var(--pos-60);
+    }
+    80% {
+      background-position: var(--pos-80);
+    }
+    100% {
+      background-position: 50% 50%;
+    }
+  } */
+
   h1 {
     font-size: var(--h1-font-size);
     line-height: 1;
@@ -66,11 +104,11 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     grid-template-rows: repeat(6, 1fr);
   }
 
-  .background {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
+  .clip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    height: fit-content;
   }
+
   img {
     width: 100%;
     height: 100%;
@@ -83,3 +121,115 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     text-decoration: underline solid var(--accent-bg-solid-primary);
   }
 </style>
+<!-- Loader Style -->
+<style>
+  .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--border-strong);
+    z-index: 10;
+    border-block: 2px solid black;
+  }
+</style>
+<!-- Animation Script -->
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let navItems = document.querySelectorAll(".nav-item");
+  let separator = document.querySelector("header .separator");
+  let firstLine = document.querySelector("#first-line");
+  let lastLine = document.querySelector("#last-line");
+  let h1Elements = document.querySelectorAll("h1");
+
+  let loader = document.querySelector(".loader");
+
+  let titleAnimation = gsap.timeline({});
+  h1Elements.forEach((h1Element) => {
+    titleAnimation.from(h1Element, {
+      yPercent: 100,
+      duration: 0.5,
+      ease: "power2.inOut",
+    });
+  });
+
+  let tl = gsap.timeline({
+    delay: 1,
+  });
+
+  /* tl.to(loader, {
+    scaleY: 0.001,
+    transformOrigin: "center",
+    duration: 0.5,
+  })
+    .to(loader, {
+      scaleX: 0.002,
+      transformOrigin: "center",
+      duration: 0.5,
+    })
+    .to(loader, {
+      top: "calc(-50vh + var(--header-height))",
+
+      duration: 1,
+    }) */
+  tl.from(separator, {
+    scaleX: 0,
+    transformOrigin: "center",
+    duration: 1,
+    ease: "power2.inOut",
+  })
+    .fromTo(
+      navItems,
+      {
+        y: 60,
+      },
+      {
+        y: 0,
+        stagger: 0.1,
+        duration: 0.5,
+      },
+    )
+    .from(
+      firstLine,
+      {
+        y: 60,
+        duration: 0.5,
+        ease: "power2.inOut",
+      },
+      "-=0.5",
+    )
+    .add(titleAnimation)
+
+    .from(
+      lastLine,
+      {
+        y: 60,
+        duration: 0.5,
+        ease: "power2.inOut",
+      },
+      "-=0.5",
+    );
+</script>
+
+<!-- Background Animation Script -->
+
+<script>
+  // Function to generate random background positions
+  function getRandomBackgroundPosition() {
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    return `${x}% ${y}%`;
+  }
+
+  const hero = document.querySelector("#hero") as HTMLElement;
+
+  // Set custom properties for keyframes
+  hero.style.setProperty("--pos-20", getRandomBackgroundPosition());
+  hero.style.setProperty("--pos-40", getRandomBackgroundPosition());
+  hero.style.setProperty("--pos-60", getRandomBackgroundPosition());
+  hero.style.setProperty("--pos-80", getRandomBackgroundPosition());
+</script>

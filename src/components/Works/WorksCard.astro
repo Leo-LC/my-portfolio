@@ -48,6 +48,31 @@ const { name, date, src } = Astro.props;
   }
 </style>
 
-<script>
+<!-- <script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
 
-</script>
+  const cards = document.querySelectorAll("#works .cards-wrapper .card");
+
+  cards.forEach((card, i) => {
+    let tl = gsap.timeline({
+      delay: 0.2 * i,
+      scrollTrigger: "#works .cards-wrapper",
+    });
+    tl.fromTo(
+      card,
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: "power4.out",
+      },
+    );
+  });
+</script> -->
