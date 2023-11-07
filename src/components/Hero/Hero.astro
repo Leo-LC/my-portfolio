@@ -16,9 +16,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     </div>
     <div class="flex items-end">
       <div class="clip">
-        <h3 id="first-line">
-          Hi my name is <span class="accent">Léo</span>, a passionate
-        </h3>
+        <h3 id="first-line">Hi my name is Léo, a passionate</h3>
       </div>
     </div>
     <div class="flex">
@@ -50,11 +48,11 @@ import ThemeSwitch from "./ThemeSwitch.astro";
 </script>
 
 <style>
-  /* section {
+  section {
     background: radial-gradient(
       var(--bg-primary) 0%,
       var(--bg-primary) 30%,
-      var(--accent-text-primary) 100%
+      var(--accent-component-bg-active) 100%
     );
     background-size: 150vw 150vw;
 
@@ -80,7 +78,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     100% {
       background-position: 50% 50%;
     }
-  } */
+  }
 
   h1 {
     font-size: var(--h1-font-size);
@@ -109,16 +107,33 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     height: fit-content;
   }
 
+  .clip:has(#last-line) {
+    height: 52%;
+  }
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  /* TODO : utiliser un ::before pour animation subtile */
   .accent {
-    /*    background-color: var(--accent-bg-solid-primary); */
-    text-decoration: underline solid var(--accent-bg-solid-primary);
+    position: relative;
+    --after-width: 0%;
+  }
+
+  .accent::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: var(--after-width);
+    height: 100%;
+    transform: translateX(-5%);
+
+    background-color: var(--accent-bg-solid-primary);
+    transition: all 0.3s ease-in-out;
   }
 </style>
 <!-- Loader Style -->
@@ -145,6 +160,9 @@ import ThemeSwitch from "./ThemeSwitch.astro";
   let firstLine = document.querySelector("#first-line");
   let lastLine = document.querySelector("#last-line");
   let h1Elements = document.querySelectorAll("h1");
+
+  const accent = document.querySelector(".accent") as HTMLElement;
+  const themeTrigger = document.querySelector("#theme-trigger") as HTMLElement;
 
   let loader = document.querySelector(".loader");
 
@@ -193,6 +211,11 @@ import ThemeSwitch from "./ThemeSwitch.astro";
         duration: 0.5,
       },
     )
+    .from(themeTrigger, {
+      xPercent: 100,
+      duration: 0.5,
+      ease: "power2.inOut",
+    })
     .from(
       firstLine,
       {
@@ -212,7 +235,14 @@ import ThemeSwitch from "./ThemeSwitch.astro";
         ease: "power2.inOut",
       },
       "-=0.5",
-    );
+    )
+    .to(accent, {
+      duration: 0.5,
+      ease: "elastic",
+      onUpdate: () => {
+        accent.style.setProperty("--after-width", "110%");
+      },
+    });
 </script>
 
 <!-- Background Animation Script -->

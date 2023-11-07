@@ -19,6 +19,7 @@
 
 <style>
   button {
+    --after-width: 110%;
   }
   span {
     position: relative;
@@ -33,7 +34,7 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    width: 110%;
+    width: var(--after-width);
     transform: translateX(-5%);
     background-color: var(--bg-solid-primary);
   }

@@ -8,21 +8,26 @@ import ContactForm from "./ContactForm.tsx";
   class="relative pt-[var(--header-height)] flex flex-col gap-8 overflow-hidden"
 >
   <SectionTitle client:visible title="Want to reach me ? " />
+
   <div class="wrapper" id="contact-wrapper">
     <ContactForm client:load />
   </div>
+
   <style>
     section {
-/*       background-color: var(--bg-primary); */
+      /*       background-color: var(--bg-primary); */
       height: calc(100vh - var(--footer-height));
+      position: relative;
+      overflow: hidden;
     }
+
     .wrapper {
       position: relative;
       align-self: center;
       justify-self: center;
-      /* flex-grow: 1; */
+
       width: 80vw;
-      z-index: 1;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -47,16 +52,31 @@ import ContactForm from "./ContactForm.tsx";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
 
-    /*   let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#contact",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-      pin: true,
+    const wrapper = document.querySelector("#contact-wrapper");
+    const contactForm = document.querySelector("#contact-form") as HTMLElement;
 
-      markers: true,
-    },
-  }); */
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#contact",
+        start: "top center",
+        end: "bottom bottom",
+        once: true,
+        scrub: true,
+        markers: true,
+      },
+    });
+
+    tl.fromTo(
+      wrapper,
+      { scale: 3, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+
+        onComplete: () => {
+          contactForm.style.opacity = "1";
+        },
+      },
+    );
   </script>
 </section>

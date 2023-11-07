@@ -40,6 +40,7 @@ const ContactForm = () => {
 
   return (
     <form
+      id="contact-form"
       action={formAction}
       method="post"
       acceptCharset="UTF-8"
