@@ -1,12 +1,12 @@
 ---
-
+import DateAPI from "../API/DateAPI/DateAPI";
+import WeatherAPI from "../API/WeatherAPI/WeatherAPI";
 ---
 
 <footer class="flex justify-between p-4 relative bottom-0">
-  <div class="border-pink-300 border">INCLUDE SPOTIFY API</div>
-
+  <WeatherAPI client:load />
   <p>Copyright 2023</p>
-  <div class="border-pink-300 border">INCLUDE LOCATION SPOTIFY</div>
+  <DateAPI client:load />
 </footer>
 
 <style>
