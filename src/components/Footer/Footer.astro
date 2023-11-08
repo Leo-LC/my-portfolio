@@ -1,11 +1,16 @@
 ---
 import DateAPI from "../API/DateAPI/DateAPI";
 import WeatherAPI from "../API/WeatherAPI/WeatherAPI";
+/* import SpotifyAPI from "../API/SpotifyAPI/SpotifyAPI"; */
+
+const date = new Date();
+const year = date.getFullYear();
 ---
 
 <footer class="flex justify-between p-4 relative bottom-0">
   <WeatherAPI client:load />
-  <p>Copyright 2023</p>
+  <!--   <SpotifyAPI client:load /> -->
+  <p>Copyright {year}</p>
   <DateAPI client:load />
 </footer>
 

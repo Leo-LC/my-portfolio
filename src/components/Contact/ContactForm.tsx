@@ -27,14 +27,6 @@ const ContactForm = () => {
     });
   }, []); */
 
-  /*   const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data); */
-  /*   console.log(errors); */
-
   const formAction =
     "https://public.herotofu.com/v1/84da5320-74b4-11ee-80c8-136eb968d513";
 

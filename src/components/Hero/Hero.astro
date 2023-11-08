@@ -8,6 +8,10 @@ import ThemeSwitch from "./ThemeSwitch.astro";
   <div
     class="hero_wrapper absolute inset-0 pt-[var(--header-height)] overflow-hidden"
   >
+    <!-- TODO : optimiser image -->
+    <div class="absolute inset-0 opacity-10 grayscale">
+      <img class="thumbnail" src="src/images/Stars.jpg" alt="" />
+    </div>
     <div class="flex justify-end">
       <!--       <p>Stop Scrolling</p> -->
     </div>
@@ -56,7 +60,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     );
     background-size: 150vw 150vw;
 
-    animation: movingGradient 30s linear infinite forwards;
+    animation: movingGradient 10s linear infinite forwards;
   }
 
   @keyframes movingGradient {
@@ -246,7 +250,6 @@ import ThemeSwitch from "./ThemeSwitch.astro";
 </script>
 
 <!-- Background Animation Script -->
-
 <script>
   // Function to generate random background positions
   function getRandomBackgroundPosition() {
@@ -262,4 +265,11 @@ import ThemeSwitch from "./ThemeSwitch.astro";
   hero.style.setProperty("--pos-40", getRandomBackgroundPosition());
   hero.style.setProperty("--pos-60", getRandomBackgroundPosition());
   hero.style.setProperty("--pos-80", getRandomBackgroundPosition());
+</script>
+
+<script>
+  import simpleParallax from "simple-parallax-js";
+
+  var image = document.getElementsByClassName("thumbnail");
+  new simpleParallax(image);
 </script>
