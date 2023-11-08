@@ -32,7 +32,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
       <div class="clip">
         <h1>Developer</h1>
       </div>
-      <Cursor />
+      <h1 id="title-cursor" class="pl-1">_</h1>
     </div>
     <div class="flex">
       <div class="clip">
@@ -121,6 +121,13 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     object-fit: cover;
   }
 
+  #title-cursor {
+    font-family: var(--headings-font-family);
+    font-size: var(--h1-font-size);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    line-height: 0.6;
+  }
   .accent {
     position: relative;
     --after-width: 0%;
@@ -181,6 +188,15 @@ import ThemeSwitch from "./ThemeSwitch.astro";
 
   let tl = gsap.timeline({
     delay: 1,
+  });
+
+  const cursor = document.querySelector("#title-cursor");
+  gsap.from(cursor, {
+    delay: 6,
+    opacity: 0,
+    ease: "power2.inOut",
+    repeat: -1,
+    yoyo: true,
   });
 
   /* tl.to(loader, {
