@@ -4,7 +4,7 @@
 
 <button
   id="theme-trigger"
-  class="absolute z-10 top-[25%] right-0 flex items-center"
+  class="absolute z-10 top-[25%] right-0 flex items-center text-4xl md:text-5xl xl:text-6xl"
 >
   <span>TOO&nbsp;</span>
   <span class="relative" id="theme-trigger_text"></span>
@@ -20,50 +20,25 @@
 <style>
   button {
     --after-width: 110%;
+    --after-height: 110%;
   }
   span {
     position: relative;
     font-family: var(--headings-font-family);
     color: var(--text-primary);
-    font-size: 3rem;
+
     z-index: 1;
   }
 
   #theme-trigger_text::before {
     content: "";
     position: absolute;
-    inset: 0;
     z-index: -1;
     width: var(--after-width);
-    transform: translateX(-5%);
+    height: var(--after-height);
+    transform: translateX(-5%) translateY(-5%);
     background-color: var(--bg-solid-primary);
   }
-  /*   #theme-trigger_text:hover {
-    background-color: var(--accent-component-bg);
-    background-size: 100% 100%;
-    transition: background-size 0.5s ease-in-out;
-  } */
-
-  /*   .blob {
-    position: absolute;
-    width: 100%;
-
-    transform: translateX(17%);
-    animation: spin 30s linear infinite;
-  }
-  svg {
-    scale: 1.2;
-    fill: var(--accent-component-bg);
-  }
-
-  @keyframes spin {
-    0% {
-      transform: translateX(17%) rotate(0deg);
-    }
-    100% {
-      transform: translateX(17%) rotate(360deg);
-    }
-  } */
 </style>
 
 <script>

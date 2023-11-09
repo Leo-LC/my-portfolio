@@ -52,18 +52,30 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
   };
 
   return (
-    <div
-      className={`${styles.sliderContainer} section-title`}
-      id="sliderContainer"
-    >
-      <div ref={slider} className={styles.slider}>
-        <h2 data-content={title} ref={firstLine} className={styles.text}>
+    <div className="flex relative z-[1] section-title" id="sliderContainer">
+      <div
+        ref={slider}
+        className={`${styles.slider} flex relative bg-transparent z-[1] whitespace-nowrap`}
+      >
+        <h2
+          data-content={title}
+          ref={firstLine}
+          className="relative uppercase text-[4rem] md:text-[6rem] xl:text-[8rem] leading-none"
+        >
           {title}
         </h2>
-        <h2 data-content={title} ref={secondLine} className={styles.text}>
+        <h2
+          data-content={title}
+          ref={secondLine}
+          className="relative uppercase text-[4rem] md:text-[6rem] xl:text-[8rem] leading-none"
+        >
           {title}
         </h2>
-        <h2 data-content={title} ref={thirdLine} className={styles.text}>
+        <h2
+          data-content={title}
+          ref={thirdLine}
+          className="relative uppercase text-[4rem] md:text-[6rem] xl:text-[8rem] leading-none"
+        >
           {title}
         </h2>
       </div>

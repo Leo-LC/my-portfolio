@@ -1,11 +1,3 @@
-.text {
-  font-size: 8rem;
-  line-height: 1;
-  text-transform: uppercase;
-  position: relative;
-  /*   z-index: 2; */
-}
-
 h2::after {
   content: attr(data-content);
   display: block;
@@ -24,32 +16,6 @@ h2::after {
   color: transparent;
 }
 
-/* h2::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 50%;
-
-  transform: translateY(100%);
-
-} */
-
-.sliderContainer {
-  display: flex;
-  position: relative;
-  /*   position: absolute; */
-  z-index: 1;
-}
-
-.slider {
-  position: relative;
-  white-space: nowrap;
-  display: flex;
-  /*   background-color: var(--color-primary); */
-  background-color: transparent;
-  z-index: 1;
-}
 .sliderContainer::before {
   content: "";
   position: absolute;

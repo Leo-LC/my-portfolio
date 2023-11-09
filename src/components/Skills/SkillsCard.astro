@@ -2,7 +2,7 @@
 
 ---
 
-<div class="cards-wrapper py-8">
+<div class="cards-wrapper relative z-[1] grid gap-2 py-8">
   <div class="card">
     <div class="card_content">
       <i class="fa-brands fa-react"></i>
@@ -200,13 +200,22 @@
 
 <style>
   .cards-wrapper {
-    display: grid;
-    grid-template-columns: repeat(8, 10vw);
-    grid-auto-rows: 10vw;
-    gap: 8px;
+    grid-template-columns: repeat(2, 40vw);
+    grid-auto-rows: 40vw;
+  }
 
-    position: relative;
-    z-index: 1;
+  @media screen and (min-width: 768px) {
+    .cards-wrapper {
+      grid-template-columns: repeat(4, 20vw);
+      grid-auto-rows: 20vw;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .cards-wrapper {
+      grid-template-columns: repeat(8, 10vw);
+      grid-auto-rows: 10vw;
+    }
   }
 
   .cards-wrapper:hover .card {
@@ -264,21 +273,31 @@
     width: calc(100% - 2px);
   }
 
+  svg,
   .svg-inline--fa {
-    width: 70px;
-    font-size: 60px;
-  }
-
-  svg {
-    width: 70px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
   }
 
   .card span {
     font-family: var(--paragraph-font-family);
     font-weight: 200;
-    font-size: 18px;
+    font-size: 1rem;
     color: var(--text-secondary);
+  }
+
+  @media screen and (min-width: 768px) {
+    svg,
+    .svg-inline--fa {
+      width: 60px;
+      height: 60px;
+      font-size: 60px;
+    }
+
+    .card span {
+      font-size: 1.25rem;
+    }
   }
 
   .card :is(svg, p) {

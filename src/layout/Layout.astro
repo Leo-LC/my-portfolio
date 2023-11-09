@@ -47,4 +47,19 @@ import Footer from "../components/Footer/Footer.astro";
   </body>
 </html>
 
-<style></style>
+<!-- Sets the offset of Header and Footer to handle the padding of each section for each device -->
+<script>
+  const header = document.querySelector("header") as HTMLElement;
+  const footer = document.querySelector("footer") as HTMLElement;
+  const headerHeight = header.offsetHeight;
+  const footerHeight = footer.offsetHeight;
+
+  document.documentElement.style.setProperty(
+    "--header-height",
+    `${headerHeight}px`,
+  );
+  document.documentElement.style.setProperty(
+    "--footer-height",
+    `${footerHeight}px`,
+  );
+</script>

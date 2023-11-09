@@ -4,7 +4,7 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle.tsx";
 
 <section
   id="about"
-  class="relative h-screen pt-[var(--header-height)] overflow-hidden flex flex-col gap-8"
+  class="relative h-screen pt-[var(--header-height)] overflow-hidden flex flex-col gap-4 xl:gap-8 justify-center items-center"
 >
   <!--   <div class="background absolute z-0 inset-0">
     <img
@@ -17,57 +17,44 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle.tsx";
   <div
     class="about_wrapper relative inset-0 overflow-hidden flex flex-col grow"
   >
-    <q class="quote">Embrace challenges to predict and create your future.</q>
-    <div class="details_wrapper">
-      <p class="details_text">
+    <q
+      class="quote relative italic text-center md:text-right text-xl md:text-2xl xl:text-3xl px-4 z-[1]"
+      >Embrace challenges to predict and create your future.</q
+    >
+    <div
+      class="details_wrapper flex flex-col gap-12 md:gap-24 xl:gap-12 grow items-center justify-center text-center px-[12vw] md:px-[15vw] xl:px-[20vw]"
+    >
+      <p class="details_text text-xl md:text-2xl xl:text-4xl">
         I'm all about crafting web experiences that not only meet but exceed
         expectations. Collaboration and communication are at the heart of my
         work – it's about joining forces to bring visions to life.
       </p>
 
-      <div class="separator w-[50%] h-0.5 my-12"></div>
-      <p class="details_text">
+      <div class="separator w-[50%] h-0.5"></div>
+      <p class="details_text text-xl md:text-2xl xl:text-4xl">
         Beyond the screen, I'm an avid traveler, continuously drawn to new
         countries and cultures. The comforting aroma of coffee and the soothing
         sounds of music inspire my personal journey.
       </p>
+      <div class="spotify text-white relative w-full border border-red-400">
+        LISTENING TO THIS OR LOCATION OR WEATHER OR SOMETHING OR CTA
+      </div>
     </div>
   </div>
 </section>
 <style>
-  /*   section {
-    background-color: var(--bg-secondary);
-  } */
-
   .quote {
     font-family: var(--paragraph-font-family);
-    font-size: 1.5rem;
-    font-style: italic;
     font-weight: 200;
-    align-self: flex-end;
-    padding: 1rem;
     color: var(--text-secondary);
-    position: relative;
-    z-index: 1;
-  }
-
-  .details_wrapper {
-    flex-grow: 1;
-    padding-inline: 20vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
   }
 
   .details_text {
     max-width: 80ch;
-    font-size: 1.75rem;
+
     line-height: 1.3;
     letter-spacing: -0.1rem;
     font-weight: 200;
-    padding: 1rem;
   }
 
   .separator {

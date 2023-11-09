@@ -86,15 +86,14 @@ h6 {
   --headings-color: var(--slate-12);
   --headings-font-family: "Anton", sans-serif;
   --headings-font-weight: 700;
-  --h1-font-size: 12rem;
 
   --paragraph-color: var(--color-secondary);
   --paragraph-font-family: "Mulish", sans-serif;
   --paragraph-font-weight: 400;
 
-  /* Manage offsets for the navbar */
-  --header-height: 3.75rem;
-  --footer-height: 3.75rem;
+  /* Manage offsets for the navbar and footer => dynamic in Layout.astro */
+  --header-height: null;
+  --footer-height: null;
 }
 
 /*  DARK THEME */
@@ -179,4 +178,15 @@ h4,
 h5,
 h6 {
   pointer-events: none;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 375px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1439px) {
 }

@@ -1,10 +1,9 @@
 ---
-import Cursor from "../Text/Cursor.astro";
 import ThemeSwitch from "./ThemeSwitch.astro";
 ---
 
 <!-- <div class="loader text-8xl grid place-content-center">WELCOME</div> -->
-<section id="hero" class="relative min-h-screen snap-start">
+<section id="hero" class="relative min-h-screen">
   <div
     class="hero_wrapper absolute inset-0 pt-[var(--header-height)] overflow-hidden"
   >
@@ -20,23 +19,29 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     </div>
     <div class="flex items-end">
       <div class="clip">
-        <h3 id="first-line">Hi my name is Léo, a passionate</h3>
+        <h3 id="first-line" class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
+          Hi my name is Léo, a passionate
+        </h3>
       </div>
     </div>
     <div class="flex">
       <div class="clip">
-        <h1>Front-End</h1>
+        <h1 class="text-[6rem] md:text-[10rem] xl:text-[12rem] uppercase">
+          Front-End
+        </h1>
       </div>
     </div>
     <div class="flex">
       <div class="clip">
-        <h1>Developer</h1>
+        <h1 class="text-[6rem] md:text-[10rem] xl:text-[12rem] uppercase">
+          Developer
+        </h1>
       </div>
       <h1 id="title-cursor" class="pl-1">_</h1>
     </div>
     <div class="flex">
       <div class="clip">
-        <h3 id="last-line">
+        <h3 id="last-line" class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
           Let's create <span class="accent">YOUR</span> web together
         </h3>
       </div>
@@ -58,9 +63,10 @@ import ThemeSwitch from "./ThemeSwitch.astro";
       var(--bg-primary) 30%,
       var(--accent-component-bg-active) 100%
     );
-    background-size: 150vw 150vw;
+    background-size: 150% 150%;
+    background-repeat: no-repeat;
 
-    animation: movingGradient 10s linear infinite forwards;
+    /*     animation: movingGradient 10s linear infinite forwards; */
   }
 
   @keyframes movingGradient {
@@ -85,25 +91,28 @@ import ThemeSwitch from "./ThemeSwitch.astro";
   }
 
   h1 {
-    font-size: var(--h1-font-size);
-    line-height: 1;
     color: var(--text-primary);
-
     font-family: var(--headings-font-family);
     font-weight: var(--headings-font-weight);
-    max-width: 10ch;
     line-height: 0.95;
-    text-transform: uppercase;
   }
+
   h3 {
-    font-size: 3rem;
     letter-spacing: -0.2rem;
     line-height: 1;
     padding-left: 0.2rem;
   }
   .hero_wrapper {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    /*     grid-template-rows: repeat(6, 1fr); */
+
+    grid-template-rows: 1fr 1fr auto auto auto 1fr;
+  }
+
+  @media screen and (min-width: 1439px) {
+    .hero_wrapper {
+      grid-template-rows: 1fr 1fr 1fr auto auto 1fr;
+    }
   }
 
   .clip {
@@ -116,7 +125,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
   }
 
   img {
-    width: 100%;
+    position: absolute;
     height: 100%;
     object-fit: cover;
   }
@@ -177,7 +186,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
 
   let loader = document.querySelector(".loader");
 
-  let titleAnimation = gsap.timeline({});
+  /* let titleAnimation = gsap.timeline({});
   h1Elements.forEach((h1Element) => {
     titleAnimation.from(h1Element, {
       yPercent: 100,
@@ -197,7 +206,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     ease: "power2.inOut",
     repeat: -1,
     yoyo: true,
-  });
+  }); */
 
   /* tl.to(loader, {
     scaleY: 0.001,
@@ -214,7 +223,9 @@ import ThemeSwitch from "./ThemeSwitch.astro";
 
       duration: 1,
     }) */
-  tl.from(separator, {
+
+  /* HERO ANIMATIONs */
+  /*  tl.from(separator, {
     scaleX: 0,
     transformOrigin: "center",
     duration: 1,
@@ -254,7 +265,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
         duration: 0.5,
         ease: "power2.inOut",
       },
-      "-=0.5",
+      "-=1",
     )
     .to(accent, {
       duration: 0.5,
@@ -262,7 +273,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
       onUpdate: () => {
         accent.style.setProperty("--after-width", "110%");
       },
-    });
+    }); */
 </script>
 
 <!-- Background Animation Script -->

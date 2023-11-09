@@ -3,17 +3,13 @@
 import Navbar from "../Navbar/Navbar.astro";
 ---
 
-<header class="fixed w-full z-10 top-0">
+<header class="fixed w-full z-10 top-0 overflow-hidden">
   <div class="blur"></div>
   <Navbar />
   <div class="separator"></div>
 </header>
 
 <style>
-  header {
-    height: var(--header-height);
-    overflow: hidden;
-  }
   .blur {
     position: absolute;
     inset: 0;

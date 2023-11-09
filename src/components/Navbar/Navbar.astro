@@ -3,30 +3,42 @@
 ---
 
 <div class="wrapper-navbar h-full">
-  <nav class="text-gray-400 flex justify-between">
-    <a class="nav-item" href="#hero" id="nametag">LEO LECEE</a>
+  <nav class="relative flex justify-between items-center">
+    <a
+      class="nav-item full-name text-2xl md:text-4xl xl:text-6xl"
+      href="#hero"
+      id="nametag">LEO LECEE</a
+    >
+    <!--  <a
+      class="nav-item abbreviated-name block md:hidden text-2xl md:text-4xl xl:text-6xl"
+      href="#hero"
+      id="nametag">L.L.</a
+    > -->
     <div class="flex">
-      <a class="nav-item" href="#about">ABOUT.</a>
-      <a class="nav-item" href="#skills">SKILLS.</a>
-      <a class="nav-item" href="#works">WORKS.</a>
-      <a class="nav-item" href="#contact">CONTACT.</a>
+      <a class="nav-item text-2xl md:text-4xl xl:text-6xl" href="#about"
+        >ABOUT.</a
+      >
+      <a class="nav-item text-2xl md:text-4xl xl:text-6xl" href="#skills"
+        >SKILLS.</a
+      >
+      <a class="nav-item text-2xl md:text-4xl xl:text-6xl" href="#works"
+        >WORKS.</a
+      >
+      <a class="nav-item text-2xl md:text-4xl xl:text-6xl" href="#contact"
+        >CONTACT.</a
+      >
     </div>
   </nav>
 </div>
 
 <style>
   nav {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     font-family: var(--headings-font-family);
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
   a {
-    font-size: 4rem;
     line-height: 1;
   }
 
@@ -66,7 +78,7 @@
 
   requestAnimationFrame(raf);
 
-  const links = document.querySelectorAll("a");
+  const links = document.querySelectorAll(".nav-item");
 
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
