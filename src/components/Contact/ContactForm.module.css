@@ -1,11 +1,5 @@
 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 3rem;
   font-family: var(--paragraph-font-family);
-  font-size: 1rem;
-  min-width: 30vw;
   color: var(--text-primary);
   opacity: 0;
   transition: all 0.5s ease-in-out;
@@ -15,8 +9,6 @@ input:not([type="submit"]),
 textarea {
   background-color: transparent;
   border-bottom: 1px solid var(--border-strong);
-
-  width: 100%;
 }
 
 textarea {
@@ -24,19 +16,8 @@ textarea {
 }
 
 :is(input, textarea)::placeholder {
-  color: white;
+  color: var(--text-primary);
 }
-
-/* input[type="submit"] {
-  background-color: var(--primary-color);
-  border-radius: 0.5rem;
-
-  color: white;
-  cursor: pointer;
-  font-family: var(--heading-font-family);
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-} */
 
 .button {
   display: flex;

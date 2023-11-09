@@ -4,29 +4,20 @@ import Navbar from "../Navbar/Navbar.astro";
 ---
 
 <header class="fixed w-full z-10 top-0 overflow-hidden">
-  <div class="blur"></div>
+  <div class="blur absolute inset-0"></div>
   <Navbar />
-  <div class="separator"></div>
+  <div class="separator relative w-full h-[2px]"></div>
 </header>
 
 <style>
   .blur {
-    position: absolute;
-    inset: 0;
-    top: -2rem;
-    height: calc(var(--header-height) + 4rem);
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
     opacity: 0;
     z-index: -1;
   }
 
   .separator {
-    position: relative;
-    top: -2px;
-    width: 100%;
-    height: 2px;
     background-color: var(--border-strong);
   }
 </style>

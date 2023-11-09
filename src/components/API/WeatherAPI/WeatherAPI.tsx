@@ -5,7 +5,18 @@ const WeatherAPI = () => {
   const [weatherData, setWeatherData] = useState<any>({
     conditions: null,
     temp: null,
+    icon: null,
   });
+
+  const weatherIcons = {
+    Thunderstorm: "wi-thunderstorm",
+    Drizzle: "wi-sleet",
+    Rain: "wi-storm-showers",
+    Snow: "wi-snow",
+    Atmosphere: "wi-fog",
+    Clear: "wi-day-sunny",
+    Clouds: "wi-day-fog",
+  } as any;
 
   // api call = https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
   useEffect(() => {
@@ -28,9 +39,9 @@ const WeatherAPI = () => {
   }, []);
 
   return (
-    <h1>
+    <p>
       {weatherData.conditions} - {weatherData.temp}°C
-    </h1>
+    </p>
   );
 };
 

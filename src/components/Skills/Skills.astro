@@ -9,12 +9,12 @@ import SkillsCard from "./SkillsCard.astro";
 >
   <SectionTitle client:visible title="My Front-End Toolbox . " />
   <div
-    class="toolbox_wrapper relative inset-0 flex flex-col gap-4 justify-center items-center grow"
+    class="toolbox_wrapper relative inset-0 flex flex-col gap-4 xl:gap-12 justify-center items-center grow"
   >
     <SkillsCard />
 
-    <div class="separator w-[50%] h-0.5 my-12"></div>
-    <p class="px-[20vw] text-center">
+    <div class="separator w-[50%] h-0.5 my-12 hidden md:block"></div>
+    <p class="px-[20vw] text-center hidden md:block">
       I am constantly refining my craft and pushing my abilities to create
       captivating web experiences. With a passion for building fast, responsive,
       and user-friendly websites, I'm excited to collaborate and bring your web

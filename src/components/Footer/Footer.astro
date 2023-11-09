@@ -7,19 +7,19 @@ const date = new Date();
 const year = date.getFullYear();
 ---
 
-<footer class="flex justify-between p-4 relative bottom-0">
+<footer
+  class="flex text-base justify-between p-4 relative bottom-0 overflow-hidden"
+>
   <WeatherAPI client:load />
   <!--   <SpotifyAPI client:load /> -->
-  <p>Copyright {year}</p>
+  <p class="flex md:hidden">&#169; {year}</p>
+  <p class="hidden md:flex">Copyright {year}</p>
   <DateAPI client:load />
 </footer>
 
 <style>
   footer {
-    height: var(--footer-height);
-    position: relative;
-    bottom: 0;
-    background-color: var(--bg-primary);
+    color: var(--text-primary);
     border-top: 1px solid white;
   }
 </style>

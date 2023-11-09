@@ -5,40 +5,25 @@ import ContactForm from "./ContactForm.tsx";
 
 <section
   id="contact"
-  class="relative pt-[var(--header-height)] flex flex-col gap-8 overflow-hidden"
+  class="relative pt-[var(--header-height)] pb-8 flex flex-col items-center justify-center gap-8 overflow-hidden"
 >
   <SectionTitle client:visible title="Want to reach me ? " />
 
-  <div class="wrapper" id="contact-wrapper">
+  <div
+    class="wrapper relative grow flex justify-center rounded-[3rem] py-12 overflow-hidden"
+    id="contact-wrapper"
+  >
     <ContactForm client:load />
   </div>
 
   <style>
     section {
-      /*       background-color: var(--bg-primary); */
       height: calc(100vh - var(--footer-height));
-      position: relative;
-      overflow: hidden;
     }
 
     .wrapper {
-      position: relative;
-      align-self: center;
-      justify-self: center;
-
+      border: 1px solid var(--border-strong);
       width: 80vw;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-block: 3rem;
-
-      border: 1px solid var(--accent-border-subtle);
-      border-radius: 3rem;
-      overflow: hidden;
-      max-width: 70vw;
-      aspect-ratio: 16/9;
-
       background: linear-gradient(
         to top,
         var(--bg-primary) 0%,
