@@ -1,0 +1,47 @@
+---
+import Head from "./Head.astro";
+
+// import styling files
+import "@radix-ui/themes/styles.css";
+import "../styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <Head title={title} />
+  <body class="dark">
+    <div class="wrapper">
+      <slot />
+    </div>
+    <script>
+      const header = document.querySelector("header") as HTMLElement;
+      const footer = document.querySelector("footer") as HTMLElement;
+      const headerHeight = header.offsetHeight;
+      const footerHeight = footer.offsetHeight;
+
+      document.addEventListener("astro:after-swap", () => {
+        document.documentElement.style.setProperty(
+          "--header-height",
+          `${headerHeight}px`,
+        );
+        document.documentElement.style.setProperty(
+          "--footer-height",
+          `${footerHeight}px`,
+        );
+      });
+
+      window.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.style.setProperty(
+          "--header-height",
+          `${headerHeight}px`,
+        );
+        document.documentElement.style.setProperty(
+          "--footer-height",
+          `${footerHeight}px`,
+        );
+      });
+    </script>
+  </body>
+</html>

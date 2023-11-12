@@ -1,0 +1,36 @@
+---
+import "@splidejs/splide/css";
+import { Image } from "astro:assets";
+import img from "../../images/Coffee.jpg";
+
+import ProjectSlide from "../Works/ProjectSlide.astro";
+---
+
+<section class="splide text-white" aria-label="Splide Basic HTML Example">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide">
+        <ProjectSlide />
+      </li>
+      <li class="splide__slide">Slide 02</li>
+      <li class="splide__slide">Slide 03</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .splide {
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+  }
+</style>
+
+<script>
+  import Splide from "@splidejs/splide";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const splide = new Splide(".splide");
+    splide.mount();
+  });
+</script>

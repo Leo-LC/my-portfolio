@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import image from "../images/Travel.jpg";
+import SmartphoneMockup from "../components/Mockups/SmartphoneMockup.astro";
+import LaptopMockup from "../components/Mockups/LaptopMockup.astro";
+
+import ProjectsCarousel from "../components/Works/ProjectsCarousel.astro";
+---
+
+<Layout title="Projet Details">
+  <header class="text-white">Back Arrow</header>
+  <div
+    class="wrapper grid place-content-center gap- bg-gray-500 text-white text-center"
+  >
+    <ProjectsCarousel />
+    <!--     <h1 class="text-4xl">Hello world!</h1> -->
+
+    <!-- <div class="desktop-mockup">
+      <div class="img-wrapper">
+        <Image src={image} alt="test image" transition:name="image" />
+      </div>
+    </div> -->
+    <!--     <LaptopMockup />
+    <SmartphoneMockup /> -->
+  </div>
+</Layout>
+
+<style>
+  .wrapper {
+    height: 100svh;
+  }
+
+  
+</style>

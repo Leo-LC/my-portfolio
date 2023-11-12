@@ -1,5 +1,5 @@
 ---
-import Layout from "../layout/Layout.astro";
+import Layout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero/Hero.astro";
 import About from "../components/About/About.astro";
 import Works from "../components/Works/Works.astro";
@@ -15,7 +15,6 @@ import Skills from "../components/Skills/Skills.astro";
     <About />
     <Skills />
     <Works />
-
     <Contact />
   </main>
 </Layout>
@@ -25,10 +24,6 @@ import Skills from "../components/Skills/Skills.astro";
     position: relative;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-  }
-  html {
-    overscroll-behavior: auto;
   }
 </style>
 
@@ -68,5 +63,3 @@ import Skills from "../components/Skills/Skills.astro";
 
   requestAnimationFrame(raf);
 </script>
-
-

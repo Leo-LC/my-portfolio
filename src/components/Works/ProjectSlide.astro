@@ -1,0 +1,43 @@
+---
+import LaptopMockup from "../Mockups/LaptopMockup.astro";
+---
+
+<div class="slide">
+  <LaptopMockup src="src/images/Coffee.jpg" />
+
+  <div class="right flex flex-col gap-8">
+    <p>
+      PROBLEMATIQUE <br />
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </p>
+    <p>
+      TECHNOLOGIES UTILISEES <br />
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </p>
+    <p>
+      CLIENT <br />
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </p>
+  </div>
+  <h1>PROJET NUMBER 1</h1>
+  <div class="links">
+    <a href="#">Voir le projet</a>
+    <a href="#">Voir le code</a>
+  </div>
+</div>
+
+<style>
+  .slide {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:
+      "mockup text"
+      "title links";
+    column-gap: 4rem;
+    row-gap: 2rem;
+    padding-inline: 8rem;
+    padding-block: 2rem;
+  }
+</style>

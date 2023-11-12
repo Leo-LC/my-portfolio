@@ -8,13 +8,14 @@ interface Props {
 const { name, date, src, last = "false" } = Astro.props;
 ---
 
+<!-- TODO : gérer opacity avec css pas js (hover parent / hover child) -->
 <div
-  class="card flex flex-col flex-wrap gap-2"
+  class="card flex flex-col justify-center gap-2"
   data-active="true"
   data-last={last}
 >
-  <div class="relative z-[1] rounded-2xl overflow-hidden grow">
-    <img class="object-cover aspect-[4/6]" src={src} alt="" />
+  <div class="image-wrapper relative z-[1] rounded-2xl overflow-hidden">
+    <img class="object-cover" src={src} alt="" />
   </div>
   <div class="text flex justify-between">
     <div class="text_name">
@@ -27,21 +28,18 @@ const { name, date, src, last = "false" } = Astro.props;
 </div>
 
 <style>
-  img {
-    width: 100%;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1200px) {
+  /*   @media screen and (min-width: 768px) and (max-width: 1200px) {
     .card[data-last="true"] {
       grid-column: 1/-1;
     }
 
-    .card[data-last="false"] img {
+    .card[data-last="false"] .image-wrapper {
       aspect-ratio: 6/4;
     }
-    .card[data-last="true"] img {
+    .card[data-last="true"] .image-wrapper {
       aspect-ratio: 16/9;
     }
-  }
+  } */
 
   .text {
     color: var(--text-primary);
@@ -49,10 +47,14 @@ const { name, date, src, last = "false" } = Astro.props;
   }
 
   .card {
+    cursor: pointer;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
   }
 
+  .image-wrapper {
+    aspect-ratio: 4/5;
+  }
   .card[data-active="true"] {
     opacity: 1;
   }
@@ -61,32 +63,3 @@ const { name, date, src, last = "false" } = Astro.props;
     opacity: 0.1;
   }
 </style>
-
-<!-- <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
-
-  const cards = document.querySelectorAll("#works .cards-wrapper .card");
-
-  cards.forEach((card, i) => {
-    let tl = gsap.timeline({
-      delay: 0.2 * i,
-      scrollTrigger: "#works .cards-wrapper",
-    });
-    tl.fromTo(
-      card,
-      {
-        y: 100,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.2,
-        ease: "power4.out",
-      },
-    );
-  });
-</script> -->

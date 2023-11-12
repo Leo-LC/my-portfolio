@@ -1,47 +1,43 @@
 ---
 import SectionTitle from "../Text/SectionTitle/SectionTitle";
+import ProjectsCarousel from "./ProjectsCarousel.astro";
 import WorksCard from "./WorksCard.astro";
+import { Image } from "astro:assets";
+
+import image from "../../images/Travel.jpg";
 ---
 
 <section
   id="works"
-  class="relative pt-[var(--header-height)] flex flex-col gap-8 min-h-screen"
+  class="relative pt-[var(--header-height)] pb-[var(--footer-height)] flex flex-col gap-8 min-h-screen"
 >
   <SectionTitle client:visible title="Some of my Recent projects . " />
 
-  <div class="cards-wrapper grow relative gap-4 md:gap-6 xl:gap-8 px-16">
-    <!-- flex flex-wrap items-center justify-center -->
-    <!-- TODO : hidden mobile and tablet ? -->
-    <div class="overlay hidden xl:flex absolute z-10 flex-col text-center">
+  <!--  <div class="overlay hidden xl:flex absolute z-10 flex-col text-center">
       <span>Project</span>
       <div class="clip">
         <h4>Nom du Projet</h4>
       </div>
-    </div>
-    <WorksCard name="Projet 1" date="09.2023" src="src/images/Coffee.jpg" />
-    <WorksCard name="Projet 2" date="10.2023" src="src/images/Travel.jpg" />
-    <WorksCard
-      name="Projet 3"
-      date="11.2023"
-      src="src/images/Vinyl.jpg"
-      last="true"
-    />
+    </div> -->
+
+  <div class="p-8 h-full grow">
+    <ProjectsCarousel />
   </div>
 </section>
 
 <style>
-  .cards-wrapper {
-    display: grid;
-    place-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  section {
+    height: 100svh;
   }
+</style>
 
+<!-- Overflay Styling -->
+<!-- <style>
   .overlay {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -75,9 +71,9 @@ import WorksCard from "./WorksCard.astro";
       transform: translateY(0);
     }
   }
-</style>
-
-<script>
+</style> -->
+<!-- Overlay Script -->
+<!-- <script>
   const cards = document.querySelectorAll(".card");
   const overlay = document.querySelector(".overlay") as HTMLElement;
   const overlayTitle = overlay.querySelector("h4") as HTMLElement;
@@ -102,4 +98,4 @@ import WorksCard from "./WorksCard.astro";
       });
     });
   });
-</script>
+</script> -->

@@ -3,7 +3,10 @@
 import Navbar from "../Navbar/Navbar.astro";
 ---
 
-<header class="fixed w-full z-10 top-0 overflow-hidden">
+<header
+  class="fixed w-full z-10 top-0 overflow-hidden active"
+  transition:persist
+>
   <div class="blur absolute inset-0"></div>
   <Navbar />
   <div class="separator relative w-full h-[2px]"></div>
