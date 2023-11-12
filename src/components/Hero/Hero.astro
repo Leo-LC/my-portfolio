@@ -37,7 +37,12 @@ import ThemeSwitch from "./ThemeSwitch.astro";
           Developer
         </h1>
       </div>
-      <h1 id="title-cursor" class="pl-1">_</h1>
+      <h1
+        id="title-cursor"
+        class="pl-1 text-[6rem] md:text-[10rem] xl:text-[12rem] uppercase"
+      >
+        _
+      </h1>
     </div>
     <div class="flex">
       <div class="clip">
@@ -131,10 +136,6 @@ import ThemeSwitch from "./ThemeSwitch.astro";
   }
 
   #title-cursor {
-    font-family: var(--headings-font-family);
-    font-size: var(--h1-font-size);
-    color: var(--text-primary);
-    text-transform: uppercase;
     line-height: 0.6;
   }
   .accent {
@@ -186,7 +187,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
 
   let loader = document.querySelector(".loader");
 
-  /* let titleAnimation = gsap.timeline({});
+  let titleAnimation = gsap.timeline({});
   h1Elements.forEach((h1Element) => {
     titleAnimation.from(h1Element, {
       yPercent: 100,
@@ -206,7 +207,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     ease: "power2.inOut",
     repeat: -1,
     yoyo: true,
-  }); */
+  });
 
   /* tl.to(loader, {
     scaleY: 0.001,
@@ -225,7 +226,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     }) */
 
   /* HERO ANIMATIONs */
-  /*  tl.from(separator, {
+  tl.from(separator, {
     scaleX: 0,
     transformOrigin: "center",
     duration: 1,
@@ -273,7 +274,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
       onUpdate: () => {
         accent.style.setProperty("--after-width", "110%");
       },
-    }); */
+    });
 </script>
 
 <!-- Background Animation Script -->
