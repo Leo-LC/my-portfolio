@@ -24,9 +24,6 @@ import SkillsCard from "./SkillsCard.astro";
 </section>
 
 <style>
-  /*   section {
-    background-color: var(--bg-primary);
-  } */
   .toolbox_wrapper {
     margin-inline: auto;
   }
@@ -70,10 +67,12 @@ import SkillsCard from "./SkillsCard.astro";
           y: 0,
           opacity: 1,
           duration: 0.5,
-
           ease: "power4.out",
         },
       );
+      tl.eventCallback("onComplete", () => {
+        tl.kill();
+      });
     });
   }
 </script>

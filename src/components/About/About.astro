@@ -66,19 +66,18 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle.tsx";
 <script>
   import "splitting/dist/splitting.css";
   import "splitting/dist/splitting-cells.css";
-  import Splitting from "splitting";
   import gsap from "gsap";
 
   const text = document.querySelectorAll(".details_text");
 
-  text.forEach((t, i) => {
+  text.forEach((line, i) => {
     let tl = gsap.timeline({
       scrollTrigger: ".details_text",
       delay: 0.5 * i,
     });
 
     tl.fromTo(
-      t,
+      line,
       {
         opacity: 0,
       },
@@ -89,19 +88,8 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle.tsx";
         ease: "power2.out",
       },
     );
-  });
-
-  /*   const targets = document.querySelectorAll(".details_text");
-
-  targets.forEach((target) => {
-    const results = Splitting({ target: target, by: "lines" }) as any;
-    const lines = results[0].lines;
-    gsap.from(lines, {
-      duration: 0.2,
-      opacity: 0,
-      stagger: 0.1,
-      scrollTrigger: "#about",
-      ease: "power2.out",
+    tl.eventCallback("onComplete", () => {
+      tl.kill();
     });
-  }); */
+  });
 </script>

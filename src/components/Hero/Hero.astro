@@ -3,7 +3,7 @@ import SocialLinks from "./SocialLinks.astro";
 
 import Switch from "./Switch.astro";
 
-import { Icon } from "astro-icon";
+import ScrollIcon from "./ScrollIcon.astro";
 ---
 
 <!-- <div class="loader text-8xl grid place-content-center">WELCOME</div> -->
@@ -60,18 +60,8 @@ import { Icon } from "astro-icon";
       </a>
 
       <span>or start scrolling</span>
+      <ScrollIcon />
     </div>
-  </div>
-  <div
-    class="border border-[var(--border-strong)] rounded-lg fixed bottom-10 right-10"
-  >
-    <Icon
-      name="ph:arrow-down-thin"
-      width="48px"
-      height="100px"
-      fill="var(--border-strong)"
-      color="var(--text-primary)"
-    />
   </div>
 </section>
 
@@ -328,6 +318,10 @@ import { Icon } from "astro-icon";
       onUpdate: () => {
         accent.style.setProperty("--after-width", "110%");
       },
+    });
+
+    tl.eventCallback("onComplete", () => {
+      tl.kill()
     });
 </script> -->
 

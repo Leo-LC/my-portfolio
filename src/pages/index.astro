@@ -47,6 +47,7 @@ import Skills from "../components/Skills/Skills.astro";
 
   const lenis = new Lenis();
   lenis.on("scroll", (e: Lenis) => {});
+  
   function raf(time: number) {
     lenis.raf(time);
     requestAnimationFrame(raf);

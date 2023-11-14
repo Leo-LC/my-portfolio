@@ -60,6 +60,7 @@ import ContactForm from "./ContactForm.tsx";
 
         onComplete: () => {
           contactForm.style.opacity = "1";
+          tl.kill();
         },
       },
     );

@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<button
+  id="scrollToTop"
+  class="border border-[var(--border-strong)] rounded-lg z-10 cursor-pointer fixed bottom-[var(--footer-height)] mb-4 right-10"
+>
+  <Icon
+    id="icon"
+    name="ph:arrow-down-thin"
+    width="48px"
+    height="100px"
+    fill="var(--border-strong)"
+    color="var(--text-primary)"
+  />
+</button>
+
+<script>
+  import Lenis from "@studio-freight/lenis";
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const icon = document.querySelector("#icon");
+  const button = document.querySelector("#scrollToTop");
+  const trigger = document.querySelector("#about");
+
+  const lenis = new Lenis();
+  function raf(time: number) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  const scrollToTop = () => {
+    lenis.scrollTo(0);
+  };
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: trigger,
+      start: "top 50%",
+      end: "top 50%",
+      scrub: true,
+      markers: true,
+      onEnter: () => {
+        gsap.to(icon, { scaleY: -1 });
+        button?.addEventListener("click", scrollToTop);
+      },
+      onLeaveBack: () => {
+        gsap.to(icon, { scaleY: 1 });
+        button?.removeEventListener("click", scrollToTop);
+      },
+    },
+  });
+</script>
