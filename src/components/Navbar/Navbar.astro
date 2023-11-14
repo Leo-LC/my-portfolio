@@ -1,5 +1,5 @@
 ---
-
+import NavLinks from "../Links/NavLinks.astro";
 ---
 
 <div class="wrapper-navbar h-full">
@@ -9,24 +9,8 @@
       href="#hero"
       id="nametag">LEO LECEE</a
     >
-    <!--  <a
-      class="nav-item abbreviated-name block md:hidden text-2xl md:text-4xl xl:text-6xl"
-      href="#hero"
-      id="nametag">L.L.</a
-    > -->
     <div class="flex">
-      <a class="nav-item text-2xl md:text-4xl xl:text-6xl" href="#about"
-        >ABOUT.</a
-      >
-      <a class="nav-item text-2xl md:text-4xl xl:text-6xl" href="#skills"
-        >SKILLS.</a
-      >
-      <a class="nav-item text-2xl md:text-4xl xl:text-6xl" href="#works"
-        >WORKS.</a
-      >
-      <a class="nav-item text-2xl md:text-4xl xl:text-6xl" href="#contact"
-        >CONTACT.</a
-      >
+      <NavLinks />
     </div>
   </nav>
 </div>
@@ -41,7 +25,6 @@
   a {
     line-height: 1;
   }
-
   a:hover {
     letter-spacing: 1px;
   }
@@ -63,28 +46,5 @@
 
   tl.to(".blur", {
     opacity: 1,
-  });
-</script>
-
-<!-- Lenis scrollTo -->
-<script>
-  import Lenis from "@studio-freight/lenis";
-  const lenis = new Lenis();
-
-  function raf(time: number) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
-
-  const links = document.querySelectorAll(".nav-item");
-
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const href = link.getAttribute("href");
-      lenis.scrollTo(href);
-    });
   });
 </script>

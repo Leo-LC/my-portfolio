@@ -1,23 +1,19 @@
 const navLinksData = [
   {
-    text: "Home",
-    path: "/",
+    text: "About.",
+    href: "#about",
   },
   {
-    text: "About",
-    path: "/#about",
+    text: "Skills.",
+    href: "#skills",
   },
   {
-    text: "Skills",
-    path: "/#skills",
+    text: "Works.",
+    href: "#works",
   },
   {
-    text: "Works",
-    path: "/#works",
-  },
-  {
-    text: "Contact",
-    path: "/#contact",
+    text: "Contact.",
+    href: "#contact",
   },
 ];
 

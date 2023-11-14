@@ -1,14 +1,13 @@
 ---
 // Data Imports
-import Icon from "astro-icon";
 import socialData from "../../data/socialData";
 
 // Component Imports
-import SocialLink from "../Links/SocialLink.astro";
+import Link from "../Links/Link.astro";
 ---
 
 <aside
-  class="social text-white absolute z-10 left-8 bottom-0 flex flex-col-reverse gap-4 items-center"
+  class="social absolute z-10 left-8 bottom-0 flex flex-col-reverse gap-4 items-center"
 >
   <div class="line w-[2px] h-[200px] bg-[var(--text-secondary)]"></div>
 
@@ -17,11 +16,12 @@ import SocialLink from "../Links/SocialLink.astro";
       socialData.map((item) => {
         return (
           <li>
-            <SocialLink
+            <Link
+              isSocialLink
               href={item.href}
-              aria-label={item.name}
               icon={{
                 name: item.name,
+                icon: item.icon,
               }}
             />
           </li>

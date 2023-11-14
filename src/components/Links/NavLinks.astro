@@ -1,0 +1,11 @@
+---
+import Link from "./Link.astro";
+
+import navLinksData from "../../data/navlinksData";
+---
+
+{
+  navLinksData.map((link) => {
+    return <Link isNavLink href={link.href} text={link.text.toUpperCase()} />;
+  })
+}

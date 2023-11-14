@@ -1,5 +1,4 @@
 ---
-import ThemeSwitch from "./ThemeSwitch.astro";
 import SocialLinks from "./SocialLinks.astro";
 
 import Switch from "./Switch.astro";
@@ -8,14 +7,13 @@ import { Icon } from "astro-icon";
 ---
 
 <!-- <div class="loader text-8xl grid place-content-center">WELCOME</div> -->
-<section id="hero" class="relative min-h-screen">
+<section id="hero" class="relative h-[100svh]">
   <div class="absolute inset-0 opacity-10 grayscale">
     <img class="thumbnail" src="src/images/Stars.jpg" alt="" />
   </div>
   <Switch />
   <SocialLinks />
 
-  <!--   <ThemeSwitch /> -->
   <div
     class="hero_wrapper absolute inset-0 pt-[var(--header-height)] pb-[var(--footer-height)] flex flex-col gap-8"
   >
@@ -63,17 +61,17 @@ import { Icon } from "astro-icon";
 
       <span>or start scrolling</span>
     </div>
-    <div
-      class="border-2 border-[var(--border-strong)] rounded-full absolute bottom-10"
-    >
-      <Icon
-        name="ph:arrow-down-thin"
-        width="48px"
-        height="100px"
-        fill="var(--border-strong)"
-        color="var(--text-primary)"
-      />
-    </div>
+  </div>
+  <div
+    class="border border-[var(--border-strong)] rounded-lg fixed bottom-10 right-10"
+  >
+    <Icon
+      name="ph:arrow-down-thin"
+      width="48px"
+      height="100px"
+      fill="var(--border-strong)"
+      color="var(--text-primary)"
+    />
   </div>
 </section>
 

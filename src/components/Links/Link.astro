@@ -1,0 +1,65 @@
+---
+import { Icon } from "astro-icon";
+
+interface LinkProps {
+  isSocialLink?: boolean;
+  isNavLink?: boolean;
+  text?: string;
+  href: string;
+  icon: {
+    name: string;
+    icon: string;
+  };
+  color: string;
+  size: string;
+  classes?: string;
+}
+
+const {
+  isNavLink,
+  isSocialLink,
+  text,
+  href,
+  icon,
+  color = "var(--text-secondary)",
+  size = "24px",
+  classes,
+  ...rest
+} = Astro.props as LinkProps;
+---
+
+{
+  isSocialLink && (
+    <a
+      href={href}
+      class:list={[classes]}
+      {...rest}
+      target="_blank"
+      aria-label={`Link to ${icon.name}`}
+    >
+      <Icon name={icon.icon} color={color} fill={color} width={size} />
+      {text}
+    </a>
+  )
+}
+
+{
+  isNavLink && (
+    <a class="nav-item text-2xl md:text-4xl xl:text-6xl" href={href}>
+      {text}
+    </a>
+  )
+}
+
+<style>
+  [astro-icon]:hover {
+    fill: var(--text-primary);
+    color: var(--text-primary);
+  }
+  a {
+    line-height: 1;
+  }
+  a:hover {
+    letter-spacing: 1px;
+  }
+</style>
