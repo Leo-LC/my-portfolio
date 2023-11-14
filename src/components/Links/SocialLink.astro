@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon";
+
+interface LinkProps {
+  text?: string;
+  href: string;
+  icon: {
+    name: string;
+  };
+  color: string;
+  size: string;
+  classes?: string;
+}
+
+const {
+  text,
+  href,
+  icon,
+  color = "var(--text-secondary)",
+  size = "24px",
+  classes,
+  ...rest
+} = Astro.props as LinkProps;
+---
+
+<a href={href} class:list={[classes]} {...rest} target="_blank">
+  <Icon
+    name={icon.name}
+    fill={color}
+    width={size}
+    aria-label=`Link to ${icon.name}`
+  />
+  {text}
+</a>
+
+<style>
+  [astro-icon]:hover {
+    fill: var(--text-primary);
+  }
+</style>

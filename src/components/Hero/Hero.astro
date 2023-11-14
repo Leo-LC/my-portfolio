@@ -1,93 +1,119 @@
 ---
 import ThemeSwitch from "./ThemeSwitch.astro";
+import SocialLinks from "./SocialLinks.astro";
+
+import Switch from "./Switch.astro";
+
+import { Icon } from "astro-icon";
 ---
 
 <!-- <div class="loader text-8xl grid place-content-center">WELCOME</div> -->
 <section id="hero" class="relative min-h-screen">
-  <div
-    class="hero_wrapper absolute inset-0 pt-[var(--header-height)] pb-[var(--footer-height)] overflow-hidden"
-  >
-    <div
-      class="social text-white absolute left-8 bottom-0 flex flex-col-reverse gap-4 items-center"
-    >
-      <div class="line"></div>
-      <a href="">Fb</a><a href="">Ig</a><a href="">Ln</a><a href="">Gh</a>
-    </div>
+  <div class="absolute inset-0 opacity-10 grayscale">
+    <img class="thumbnail" src="src/images/Stars.jpg" alt="" />
+  </div>
+  <Switch />
+  <SocialLinks />
 
+  <!--   <ThemeSwitch /> -->
+  <div
+    class="hero_wrapper absolute inset-0 pt-[var(--header-height)] pb-[var(--footer-height)] flex flex-col gap-8"
+  >
     <!-- TODO : optimiser image -->
-    <div class="absolute inset-0 opacity-10 grayscale">
-      <img class="thumbnail" src="src/images/Stars.jpg" alt="" />
-    </div>
-    <div class="flex justify-end">
-      <!--       <p>Stop Scrolling</p> -->
-    </div>
-    <div class="flex">
-      <ThemeSwitch />
-    </div>
-    <div class="flex items-end">
+
+    <div class="text-center">
       <div class="clip">
         <h3 id="first-line" class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
           Hi my name is Léo,
         </h3>
       </div>
-    </div>
-    <div class="flex items-end">
       <div class="clip">
         <h3 class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
           I am a dedicated, passionate
         </h3>
       </div>
-    </div>
-    <div class="flex">
       <div class="clip">
         <h1 class="text-[6rem] md:text-[10rem] xl:text-[12rem] uppercase">
           Front-End
         </h1>
       </div>
-    </div>
-    <div class="flex">
       <div class="clip">
         <h1 class="text-[6rem] md:text-[10rem] xl:text-[12rem] uppercase">
           Developer
         </h1>
       </div>
-    </div>
-    <div class="flex mb-8">
       <div class="clip">
         <h3 id="last-line" class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
           Let's create <span class="accent">YOUR</span> web today.
         </h3>
       </div>
     </div>
-    <div class="flex flex-col justify-center text-center gap-4">
-      <a href="">Contact me</a>
-      <div class="flex flex-col">
-        <p>or start scrolling</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          version="1.1"
-          x="0px"
-          y="0px"
-          viewBox="0 0 100 125"
-          style="enable-background:new 0 0 100 100;"
-          xml:space="preserve"
-          ><style type="text/css">
-            .st0 {
-              fill: #ffffff;
-              stroke: white;
-              stroke-width: 2.5;
-              stroke-miterlimit: 10;
-            }
-          </style><line class="st0" x1="50.1" y1="24.5" x2="50.1" y2="74.9"
-          ></line><line class="st0" x1="64.7" y1="59.9" x2="49.1" y2="75.5"
-          ></line><line class="st0" x1="35.3" y1="59.9" x2="50.9" y2="75.5"
-          ></line></svg
+
+    <div class="cta flex gap-24 items-baseline text-center">
+      <a
+        href="/#contact"
+        class="button relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300"
+      >
+        <span
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md"
         >
-      </div>
+          Contact me
+        </span>
+      </a>
+
+      <span>or start scrolling</span>
+    </div>
+    <div
+      class="border-2 border-[var(--border-strong)] rounded-full absolute bottom-10"
+    >
+      <Icon
+        name="ph:arrow-down-thin"
+        width="48px"
+        height="100px"
+        fill="var(--border-strong)"
+        color="var(--text-primary)"
+      />
     </div>
   </div>
 </section>
+
+<style>
+  .cta span {
+    background-color: var(--component-bg);
+    font-size: 1.25rem;
+  }
+  .cta .button {
+    background: linear-gradient(
+      to bottom right,
+      var(--accent-border-subtle),
+      var(--accent-border-primary)
+    );
+    font-size: 1.25rem;
+  }
+
+  .cta.button:hover {
+    background: linear-gradient(
+      to bottom right,
+      var(--accent-border-primary),
+      var(--accent-border-subtle)
+    );
+  }
+
+  .cta .button:hover span {
+    background-color: transparent;
+  }
+
+  [astro-icon] {
+    transform: translateY(-10%);
+    animation: upAndDown 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes upAndDown {
+    100% {
+      transform: translateY(10%);
+    }
+  }
+</style>
 
 <!-- Parallax Script -->
 <script>
@@ -143,11 +169,6 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     padding-left: 0.2rem;
   }
 
-  .line {
-    width: 2px;
-    height: 200px;
-    background-color: #ffffff;
-  }
   .hero_wrapper {
     display: flex;
     flex-direction: column;

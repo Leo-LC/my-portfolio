@@ -144,6 +144,7 @@ h2 {
   color: var(--slate-12);
   font-family: var(--headings-font-family);
   font-weight: var(--headings-font-weight);
+  pointer-events: none;
 }
 
 h3,
@@ -155,6 +156,7 @@ span {
   color: var(--text-primary);
   font-family: var(--paragraph-font-family);
   font-weight: var(--paragraph-font-weight);
+  pointer-events: none;
 }
 /* Links */
 a {
