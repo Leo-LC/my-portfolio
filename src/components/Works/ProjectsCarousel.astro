@@ -3,24 +3,31 @@ import "@splidejs/splide/css";
 import projectsData from "../../data/projectsData";
 
 import ProjectSlide from "../Works/ProjectSlide.astro";
+import Icon from "astro-icon";
 ---
 
-<section class="splide text-white" aria-label="Splide Basic HTML Example">
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="m14 7l-5 5l5 5V7z"/></svg> -->
+<section class="splide" aria-label="Splide Basic HTML Example">
+  <ul class="splide__pagination"></ul>
+  <!--   <div class="splide__arrows">
+    <button class="splide__arrow splide__arrow--prev">
+      <Icon name="ic:sharp-arrow-right" />
+    </button>
+    <button class="splide__arrow splide__arrow--next"> Next</button>
+  </div> -->
   <div class="splide__track">
     <ul class="splide__list">
       {
         projectsData.map((project) => (
-          <li class="splide__slide">
-            <ProjectSlide
-              src={project.source}
-              description={project.description}
-              technologies={project.technologies}
-              client={project.client}
-              website={project.website}
-              github={project.github}
-              title={project.title}
-            />
-          </li>
+          <ProjectSlide
+            src={project.source}
+            description={project.description}
+            technologies={project.technologies}
+            client={project.client}
+            website={project.website}
+            github={project.github}
+            title={project.title.toUpperCase()}
+          />
         ))
       }
     </ul>
@@ -33,13 +40,25 @@ import ProjectSlide from "../Works/ProjectSlide.astro";
     position: relative;
     height: 100%;
   }
+  .splide__pagination {
+    bottom: 2rem;
+  }
+  /*   .splide .splide__arrow {
+    background-color: transparent;
+    color: blue;
+    font-size: 2rem;
+  } */
 </style>
 
 <script>
   import Splide from "@splidejs/splide";
 
   document.addEventListener("DOMContentLoaded", () => {
-    const splide = new Splide(".splide");
+    const splide = new Splide(".splide", {
+      type: "loop",
+      speed: 1000,
+      lazyLoad: "nearby",
+    });
     splide.mount();
   });
 </script>

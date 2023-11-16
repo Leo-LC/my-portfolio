@@ -43,7 +43,6 @@ import { Icon } from "astro-icon";
       start: "top 50%",
       end: "top 50%",
       scrub: true,
-      markers: true,
       onEnter: () => {
         gsap.to(icon, { scaleY: -1 });
         button?.addEventListener("click", scrollToTop);

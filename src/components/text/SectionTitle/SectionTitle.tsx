@@ -19,7 +19,7 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
   const speed = 0.1;
 
   //Call animation on mount and handles the reverse animation on scroll
-  useEffect(() => {
+  /* useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     requestAnimationFrame(animation);
 
@@ -29,15 +29,15 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
         start: "top",
         end: "bottom",
         scrub: 0.25,
-        /*    markers: true, */
+
         onUpdate: (e) => (direction = e.direction * -1),
       },
       x: -300,
     });
-  }, []);
+  }, []); */
 
   // Infinite animation of the text
-  const animation = () => {
+  /* const animation = () => {
     if (xPercent < -100) {
       xPercent = 0;
     }
@@ -49,7 +49,7 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
     gsap.set(thirdLine.current, { xPercent: xPercent });
     xPercent += (speed * direction) / 4;
     requestAnimationFrame(animation);
-  };
+  }; */
 
   return (
     <div className="flex relative z-[1] section-title" id="sliderContainer">

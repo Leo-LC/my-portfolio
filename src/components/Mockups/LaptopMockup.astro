@@ -3,22 +3,45 @@ const { src } = Astro.props;
 import { Image } from "astro:assets";
 ---
 
-<div class="relative">
+<div>
   <div
-    class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
+    class="relative mx-auto border-[var(--border-strong)] border-t-[18px] border-x-[8px] rounded-t-l"
   >
-    <div
-      class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800"
-    >
-      <Image src={src} class="w-full object-cover rounded-xl" alt="" />
-    </div>
-  </div>
-  <div
-    class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]"
-  >
-    <div
-      class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800"
-    >
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+    <div class="overflow-hidden">
+      <Image src={src} class="w-full aspect-[3/2] object-cover" alt="" />
     </div>
   </div>
 </div>
+
+<style>
+  .circle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-secondary);
+    z-index: 10;
+    top: -10px;
+    left: 0;
+  }
+
+  .c1:hover {
+    background-color: red;
+  }
+  .c2 {
+    left: 10px;
+  }
+  .c2:hover {
+    background-color: orange;
+  }
+
+  .c3 {
+    left: 20px;
+  }
+  .c3:hover {
+    background-color: green;
+  }
+</style>

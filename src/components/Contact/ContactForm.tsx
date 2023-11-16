@@ -1,5 +1,3 @@
-//Framer Motion
-
 import styles from "./ContactForm.module.css";
 import FormInput from "./FormInput";
 
