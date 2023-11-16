@@ -5,19 +5,7 @@ form {
   transition: all 0.5s ease-in-out;
 }
 
-input:not([type="submit"]),
-textarea {
-  background-color: transparent;
-  border-bottom: 1px solid var(--border-strong);
-}
 
-textarea {
-  resize: none;
-}
-
-:is(input, textarea)::placeholder {
-  color: var(--text-primary);
-}
 
 .button {
   display: flex;

@@ -5,12 +5,12 @@ import ContactForm from "./ContactForm.tsx";
 
 <section
   id="contact"
-  class="relative pt-[var(--header-height)] pb-8 flex flex-col items-center justify-center gap-8 overflow-hidden"
+  class="relative pt-[var(--header-height)] pb-8 flex flex-col items-center gap-8 overflow-hidden"
 >
   <SectionTitle client:visible title="Want to reach me ? " />
 
   <div
-    class="wrapper relative grow flex justify-center rounded-[3rem] py-12 overflow-hidden"
+    class="relative flex justify-center items-center rounded-[3rem] py-12 overflow-hidden"
     id="contact-wrapper"
   >
     <ContactForm client:load />
@@ -21,7 +21,7 @@ import ContactForm from "./ContactForm.tsx";
       height: calc(100vh - var(--footer-height));
     }
 
-    .wrapper {
+    #contact-wrapper {
       border: 1px solid var(--border-strong);
       width: 80vw;
       background: linear-gradient(

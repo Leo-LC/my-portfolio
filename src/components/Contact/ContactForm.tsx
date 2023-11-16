@@ -1,6 +1,7 @@
 //Framer Motion
 
 import styles from "./ContactForm.module.css";
+import FormInput from "./FormInput";
 
 const ContactForm = () => {
   const formAction =
@@ -13,29 +14,14 @@ const ContactForm = () => {
       action={formAction}
       method="post"
       acceptCharset="UTF-8"
-      /*       onSubmit={handleSubmit} */
     >
-      <div className="flex flex-col content-center w-full ">
-        <label htmlFor="name">Your Name&#42;</label>
-        <input name="Name" id="name" type="text" required />
-      </div>
-      <div className="flex flex-col w-full">
-        <label htmlFor="email">Your Email&#42;</label>
-        <input name="Email" id="email" type="email" required />
-      </div>
-      <div className="flex flex-col grow w-full">
-        <label htmlFor="message">Your Message&#42;</label>
+      <FormInput type="text" id="name" label="Your Name&#42;" />
+      <FormInput type="email" id="email" label="Your Email&#42;" />
+      <FormInput type="textarea" id="message" label="Your Message&#42;" />
 
-        <textarea
-          name="Message"
-          id="message"
-          required
-          className="grow"
-        ></textarea>
-      </div>
       <div className={styles.button}>
         <input type="submit" value="Send your message" />
-        {/* Bot protection */}
+
         <div
           style={{
             textIndent: "-99999px",

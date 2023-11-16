@@ -1,21 +1,20 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
-
 import Switch from "./Switch.astro";
-
 import ScrollIcon from "./ScrollIcon.astro";
+import CTAButton from "../Buttons/CTAButton.astro";
 ---
 
 <!-- <div class="loader text-8xl grid place-content-center">WELCOME</div> -->
 <section id="hero" class="relative h-[100svh]">
-  <div class="absolute inset-0 opacity-10 grayscale">
+  <div class="absolute inset-0 opacity-10 grayscale overflow-hidden">
     <img class="thumbnail" src="src/images/Stars.jpg" alt="" />
   </div>
   <Switch />
   <SocialLinks />
 
   <div
-    class="hero_wrapper absolute inset-0 pt-[var(--header-height)] pb-[var(--footer-height)] flex flex-col gap-8"
+    class="hero_wrapper absolute inset-0 pt-[var(--header-height)] flex flex-col gap-8"
   >
     <!-- TODO : optimiser image -->
 
@@ -46,51 +45,12 @@ import ScrollIcon from "./ScrollIcon.astro";
         </h3>
       </div>
     </div>
-
-    <div class="cta flex gap-24 items-baseline text-center">
-      <a
-        href="/#contact"
-        class="button relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300"
-      >
-        <span
-          class="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md"
-        >
-          Contact me
-        </span>
-      </a>
-
-      <span>or start scrolling</span>
-      <ScrollIcon />
-    </div>
+    <CTAButton />
+    <ScrollIcon />
   </div>
 </section>
 
 <style>
-  .cta span {
-    background-color: var(--component-bg);
-    font-size: 1.25rem;
-  }
-  .cta .button {
-    background: linear-gradient(
-      to bottom right,
-      var(--accent-border-subtle),
-      var(--accent-border-primary)
-    );
-    font-size: 1.25rem;
-  }
-
-  .cta.button:hover {
-    background: linear-gradient(
-      to bottom right,
-      var(--accent-border-primary),
-      var(--accent-border-subtle)
-    );
-  }
-
-  .cta .button:hover span {
-    background-color: transparent;
-  }
-
   [astro-icon] {
     transform: translateY(-10%);
     animation: upAndDown 1s ease-in-out infinite alternate;
@@ -215,10 +175,24 @@ import ScrollIcon from "./ScrollIcon.astro";
   }
 </style> -->
 <!-- Animation Script -->
-<!-- <script>
+<script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
+
+  import Lenis from "@studio-freight/lenis";
+
+  const lenis = new Lenis();
+  function raf(time: number) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+  const contactMe = document.querySelector("#contact-me") as HTMLElement;
+
+  contactMe.addEventListener("click", () => {
+    lenis.scrollTo("#contact");
+  });
 
   let navItems = document.querySelectorAll(".nav-item");
   let separator = document.querySelector("header .separator");
@@ -231,7 +205,7 @@ import ScrollIcon from "./ScrollIcon.astro";
 
   let loader = document.querySelector(".loader");
 
-  let titleAnimation = gsap.timeline({});
+  /*  let titleAnimation = gsap.timeline({});
   h1Elements.forEach((h1Element) => {
     titleAnimation.from(h1Element, {
       yPercent: 100,
@@ -252,7 +226,7 @@ import ScrollIcon from "./ScrollIcon.astro";
     repeat: -1,
     yoyo: true,
   });
-
+ */
   /* tl.to(loader, {
     scaleY: 0.001,
     transformOrigin: "center",
@@ -270,7 +244,7 @@ import ScrollIcon from "./ScrollIcon.astro";
     }) */
 
   /* HERO ANIMATIONs */
-  tl.from(separator, {
+  /*   tl.from(separator, {
     scaleX: 0,
     transformOrigin: "center",
     duration: 1,
@@ -320,10 +294,10 @@ import ScrollIcon from "./ScrollIcon.astro";
       },
     });
 
-    tl.eventCallback("onComplete", () => {
-      tl.kill()
-    });
-</script> -->
+  tl.eventCallback("onComplete", () => {
+    tl.kill();
+  }); */
+</script>
 
 <!-- Background Animation Script -->
 <!-- <script>

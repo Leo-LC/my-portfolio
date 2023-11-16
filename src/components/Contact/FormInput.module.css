@@ -1,0 +1,50 @@
+input:not([type="submit"]),
+textarea {
+  background-color: transparent;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+#message {
+  border: 1px solid red;
+}
+
+:is(input, textarea)::placeholder {
+  color: var(--text-primary);
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.input,
+.label {
+  font-size: 1rem;
+  height: 2rem;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  outline: none;
+}
+
+.label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  cursor: text;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label,
+.textarea:focus + .label,
+.textarea:not(:placeholder-shown) + .label {
+  pointer-events: none;
+  cursor: none;
+  transform: translateY(-2rem);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}

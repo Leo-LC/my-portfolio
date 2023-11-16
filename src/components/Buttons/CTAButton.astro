@@ -1,0 +1,42 @@
+---
+
+---
+
+<a
+  href="#about"
+  id="contact-me"
+  class="button relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300"
+>
+  <span
+    class="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md"
+  >
+    Contact me
+  </span>
+</a>
+
+<style>
+  span {
+    background-color: var(--component-bg);
+    font-size: 1.25rem;
+  }
+  .button {
+    background: linear-gradient(
+      to bottom right,
+      var(--accent-border-subtle),
+      var(--accent-border-primary)
+    );
+    font-size: 1.25rem;
+  }
+
+  .button:hover {
+    background: linear-gradient(
+      to bottom right,
+      var(--accent-border-primary),
+      var(--accent-border-subtle)
+    );
+  }
+
+  .button:hover span {
+    background-color: transparent;
+  }
+</style>
