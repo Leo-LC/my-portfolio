@@ -26,7 +26,6 @@ const { title } = Astro.props;
       .background {
         position: fixed;
         height: 100svh;
-        border: 2px solid red;
         width: 130vw;
       }
       .image {
@@ -71,25 +70,6 @@ const { title } = Astro.props;
       tl2.to(background, {
         opacity: 0.5,
       });
-
-      /*    tl.to(background, {
-        scrollTrigger: {
-          trigger: hero,
-
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-        opacity: 0.1,
-      }).to(background, {
-        scrollTrigger: {
-          trigger: contact,
-          start: "top bottom",
-          end: "bottom bottom",
-          markers: true,
-        },
-        opacity: 1,
-      }); */
 
       const header = document.querySelector("header") as HTMLElement;
       const footer = document.querySelector("footer") as HTMLElement;
