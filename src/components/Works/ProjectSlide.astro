@@ -1,32 +1,38 @@
 ---
 import LaptopMockup from "../Mockups/LaptopMockup.astro";
+
+const { src, description, technologies, client, title, website, github } =
+  Astro.props;
 ---
 
 <div class="slide">
-  <LaptopMockup src="src/images/Coffee.jpg" />
+  <LaptopMockup src={src} />
 
   <div class="right flex flex-col gap-8">
     <p>
-      PROBLEMATIQUE <br />
-       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      DESCRIPTION <br />
+      {description}
     </p>
     <p>
       TECHNOLOGIES UTILISEES <br />
-       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      {technologies}
     </p>
     <p>
       CLIENT <br />
-       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      {client}
     </p>
   </div>
-  <h1>PROJET NUMBER 1</h1>
+  <h1>{title}</h1>
   <div class="links">
-    <a href="#">Voir le projet</a>
-    <a href="#">Voir le code</a>
+    <a href="#">{website}</a>
+    <a href="#">{github}</a>
   </div>
 </div>
 
 <style>
+  img {
+    width: 400px;
+  }
   .slide {
     display: grid;
     align-items: center;
