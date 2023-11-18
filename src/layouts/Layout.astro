@@ -15,7 +15,11 @@ const { title } = Astro.props;
   <Head title={title} />
   <body class="dark">
     <div class="background">
-      <Image src={background} alt="background" class="background__image" />
+      <Image
+        src={background}
+        alt="background"
+        class="background__image thumbnail"
+      />
     </div>
 
     <slot />
@@ -34,7 +38,12 @@ const { title } = Astro.props;
         object-fit: cover;
       }
     </style>
+    <script>
+      import simpleParallax from "simple-parallax-js";
+      const image = document.getElementsByClassName("thumbnail");
 
+      new simpleParallax(image);
+    </script>
     <script>
       import gsap from "gsap";
       import { ScrollTrigger } from "gsap/ScrollTrigger";
