@@ -1,11 +1,16 @@
 ---
-import Link from "./Link.astro";
-
 import navLinksData from "../../data/navlinksData";
+import NavLink from "./NavLink.astro";
 ---
 
 {
-  navLinksData.map((link) => {
-    return <Link isNavLink href={link.href} text={link.text.toUpperCase()} />;
+  navLinksData.map((link, i) => {
+    return (
+      <NavLink
+        href={link.href}
+        text={link.text.toUpperCase()}
+        style={`--delay : ${i}`}
+      />
+    );
   })
 }

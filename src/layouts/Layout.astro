@@ -14,21 +14,21 @@ const { title } = Astro.props;
 <html lang="en">
   <Head title={title} />
   <body class="dark">
-    <div class="wrapper">
-      <div class="background bg-1">
-        <Image src={background} alt="background" class="image" />
-      </div>
-
-      <slot />
+    <div class="background">
+      <Image src={background} alt="background" class="background__image" />
     </div>
+
+    <slot />
 
     <style>
       .background {
+        background-color: var(--bg-primary);
         position: fixed;
-        height: 100svh;
-        width: 130vw;
+        height: 100vh;
+        height: 100dvh;
+        width: 130%;
       }
-      .image {
+      .background__image {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -41,7 +41,9 @@ const { title } = Astro.props;
 
       gsap.registerPlugin(ScrollTrigger);
 
-      const background = document.querySelector(".background") as HTMLElement;
+      const background = document.querySelector(
+        ".background__image",
+      ) as HTMLElement;
       const hero = document.querySelector("#hero") as HTMLElement;
       const contact = document.querySelector("#contact") as HTMLElement;
 

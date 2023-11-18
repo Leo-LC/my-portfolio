@@ -3,24 +3,35 @@
 import Navbar from "../Navbar/Navbar.astro";
 ---
 
-<header
-  class="fixed w-full z-50 top-0 overflow-hidden active"
-  transition:persist
->
-  <div class="blur absolute inset-0"></div>
+<header class="fixed w-full z-50 top-0">
   <Navbar />
-  <div class="separator relative w-full h-[2px]"></div>
 </header>
 
 <style>
-  .blur {
+  header {
     background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(6px);
-    opacity: 0;
-    z-index: -1;
-  }
-
-  .separator {
-    background-color: var(--text-secondary);
+    border-bottom: 1px solid var(--text-secondary);
   }
 </style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const header = document.querySelector("header");
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "center center",
+      end: "bottom center",
+      scrub: true,
+      markers: false,
+    },
+  });
+
+  tl.to(header, {
+    backdropFilter: "blur(50px)",
+  });
+</script>

@@ -17,8 +17,11 @@ const ContactForm = () => {
       <FormInput type="email" id="email" label="Your Email&#42;" />
       <FormInput type="textarea" id="message" label="Your Message&#42;" />
 
-      <div className={styles.button}>
-        <input type="submit" value="Send your message" />
+      <div className={styles.btn}>
+        <input type="submit" value="Send it !" />
+        <span aria-hidden="true" className={styles.marquee}>
+          Send it !
+        </span>
 
         <div
           style={{

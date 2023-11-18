@@ -130,14 +130,6 @@ body {
   overflow: hidden;
 }
 
-body .wrapper {
-  background: linear-gradient(
-    to bottom,
-    var(--accent-bg-primary) 0%,
-    var(--bg-primary) 100%
-  );
-}
-
 /*  TEXT STYLING */
 
 h2 {
@@ -165,13 +157,13 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-a:hover {
+/* a:hover {
   color: var(--accent-text-primary);
 }
 
 a:active {
   color: var(--accent-text-secondary);
-}
+} */
 
 h1,
 h2,

@@ -4,7 +4,7 @@ import { Icon } from "astro-icon";
 
 <button
   id="scrollToTop"
-  class="border border-[var(--border-strong)] rounded-lg z-10 cursor-pointer fixed bottom-[var(--footer-height)] mb-4 right-10"
+  class="border border-[var(--text-primary)] rounded-lg z-10 cursor-pointer fixed bottom-[var(--footer-height)] mb-4 right-10"
 >
   <Icon
     id="icon"
@@ -15,6 +15,20 @@ import { Icon } from "astro-icon";
     color="var(--text-primary)"
   />
 </button>
+
+<style>
+  [astro-icon] {
+    transform: translateY(-10%);
+    animation: bounce 2s infinite ease-in-out;
+    animation-play-state: running;
+  }
+
+  @keyframes bounce {
+    50% {
+      transform: translateY(10%);
+    }
+  }
+</style>
 
 <script>
   import Lenis from "@studio-freight/lenis";
@@ -42,14 +56,23 @@ import { Icon } from "astro-icon";
       trigger: trigger,
       start: "top 50%",
       end: "top 50%",
-      scrub: true,
-      onEnter: () => {
-        gsap.to(icon, { scaleY: -1 });
-        button?.addEventListener("click", scrollToTop);
-      },
-      onLeaveBack: () => {
-        gsap.to(icon, { scaleY: 1 });
-        button?.removeEventListener("click", scrollToTop);
+      scrub: false,
+      onUpdate: (self) => {
+        if (self.direction === 1) {
+          gsap.to(icon, {
+            scaleY: -1,
+            translateY: "0%",
+            animation: "none",
+          });
+          gsap.set(icon, {});
+          button?.addEventListener("click", scrollToTop);
+        } else {
+          gsap.to(icon, {
+            scaleY: 1,
+            translateY: "-10%",
+            animation: "bounce 2s infinite ease-in-out",
+          });
+        }
       },
     },
   });

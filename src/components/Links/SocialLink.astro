@@ -1,0 +1,51 @@
+---
+import { Icon } from "astro-icon";
+
+const {
+  text,
+  href,
+  icon,
+  color,
+  size = "32px",
+  classes,
+  ...rest
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[classes]}
+  {...rest}
+  target="_blank"
+  aria-label={`Link to ${icon.name}`}
+>
+  <Icon name={icon} id={icon} color={color} width={size} />
+</a>
+
+<style>
+  a {
+    display: grid;
+    place-content: center;
+  }
+  [astro-icon] {
+    transition: color 0.2s ease-in-out;
+  }
+  [astro-icon="fa:facebook-square"]:hover {
+    color: #3b5998;
+  }
+  [astro-icon="fa:github-square"]:hover {
+    color: #333;
+  }
+  [astro-icon="fa:instagram"]:hover {
+    color: #e1306c;
+  }
+  [astro-icon="fa:linkedin-square"]:hover {
+    color: #0077b5;
+  }
+
+  @media screen and (max-width: 768px) {
+    [astro-icon] {
+      width: 24px;
+    }
+  }
+</style>

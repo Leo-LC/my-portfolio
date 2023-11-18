@@ -1,0 +1,69 @@
+---
+// Data Imports
+import socialData from "../../data/socialData";
+
+// Component Imports
+import SocialLink from "./SocialLink.astro";
+---
+
+<aside
+  class="social absolute z-10 left-8 bottom-0 flex flex-col-reverse gap-4 items-center"
+>
+  <div class="relative" id="socialLine"></div>
+
+  <ul class="flex flex-col gap-4 relative">
+    {
+      socialData.map((item) => {
+        return (
+          <li>
+            <SocialLink href={item.href} icon={item.icon} id={item.name} />
+          </li>
+        );
+      })
+    }
+  </ul>
+</aside>
+
+<style>
+  #socialLine {
+    width: 2px;
+    height: 260px;
+    background: var(--text-primary);
+  }
+  @media screen and (max-width: 768px) {
+    .social {
+      height: fit-content;
+      align-items: center;
+      flex-direction: row;
+      top: calc(var(--header-height) + 2rem);
+      left: 0;
+    }
+    ul {
+      flex-direction: row;
+    }
+
+    #socialLine {
+      width: 40px;
+      height: 2px;
+    }
+  }
+</style>
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const line = document.querySelector("#socialLine");
+
+  gsap.to(line, {
+    scrollTrigger: {
+      id: "socialLine",
+      trigger: "#hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+    height: "00px",
+  });
+</script>

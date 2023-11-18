@@ -47,13 +47,13 @@ import Skills from "../components/Skills/Skills.astro";
 
   const lenis = new Lenis();
   lenis.on("scroll", (e: Lenis) => {});
-  
+
   function raf(time: number) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
 
-  const links = document.querySelectorAll(".nav-item");
+  const links = document.querySelectorAll(".nav__item, .nav__name");
 
   links.forEach((link) => {
     link.addEventListener("click", (e) => {

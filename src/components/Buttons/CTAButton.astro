@@ -2,41 +2,71 @@
 
 ---
 
-<a
-  href="#about"
-  id="contact-me"
-  class="button relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300"
->
-  <span
-    class="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md"
-  >
-    Contact me
-  </span>
+<a class="btn" href="#about" id="contact-me">
+  <span class="text">Contact me</span>
+  <span aria-hidden="true" class="marquee">Contact me</span>
 </a>
 
 <style>
-  span {
-    background-color: var(--component-bg);
+  .btn {
+    background: var(--slate-a1);
+    color: var(--text-primary);
+    border: 2px solid var(--text-primary);
+
+    letter-spacing: normal;
     font-size: 1.25rem;
-  }
-  .button {
-    background: linear-gradient(
-      to bottom right,
-      var(--border-subtle),
-      var(--border-primary)
-    );
-    font-size: 1.25rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 0.8rem 3rem;
+    position: relative;
   }
 
-  .button:hover {
-    background: linear-gradient(
-      to bottom right,
-      var(--border-primary),
-      var(--border-subtle)
-    );
+  .btn span {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+
+    transition: opacity 0.2s ease;
   }
 
-  .button:hover span {
-    background-color: transparent;
+  .btn .marquee {
+    --spacing: 10rem;
+    --start: 0rem;
+    --end: 10rem;
+    opacity: 0;
+    position: relative;
+    animation: marquee 4s linear infinite;
+    animation-play-state: paused;
+
+    text-shadow:
+      var(--text-primary) var(--spacing) 0,
+      var(--text-primary) calc(var(--spacing) * -1) 0,
+      var(--text-primary) calc(var(--spacing) * -2) 0;
+  }
+
+  .btn:hover {
+    backdrop-filter: blur(6px);
+  }
+
+  .btn:hover .marquee {
+    animation-play-state: running;
+    opacity: 1;
+  }
+
+  .btn:hover .text {
+    opacity: 0;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(var(--start));
+    }
+
+    to {
+      transform: translateX(var(--end));
+    }
   }
 </style>
