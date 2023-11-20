@@ -1,1 +1,0 @@
-const t="_sliderContainer_1tc1s_19",s="_slider_1tc1s_19",o={sliderContainer:t,slider:s},n="_btn_motah_8",e="_scroll_motah_33",c={btn:n,scroll:e},_="_inputWrapper_1ky31_11",r="_input_1ky31_11",a="_label_1ky31_16",l="_textarea_1ky31_22",i={inputWrapper:_,input:r,label:a,textarea:l};export{c as a,o as b,i as s};
