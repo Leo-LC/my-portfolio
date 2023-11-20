@@ -6,6 +6,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [react(), tailwind()],
   /*   output: "server", */
-  site: "https://leo-lc.github.io",
-  base: "/my-portfolio",
+  /*   site: "https://leo-lc.github.io",
+  base: "/my-portfolio", */
 });
