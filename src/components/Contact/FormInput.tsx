@@ -9,11 +9,6 @@ interface FormInputProps {
 const FormInput: React.FC<FormInputProps> = ({ id, label, type }) => {
   const numberOfLines = 5;
 
-  /*   const resize = (e: React.FormEvent<HTMLTextAreaElement>) => {
-    e.currentTarget.style.height = "auto";
-    e.currentTarget.style.height = e.currentTarget.scrollHeight + "px";
-  }; */
-
   return (
     <div className={styles.inputWrapper}>
       {type === "text" || type === "email" ? (

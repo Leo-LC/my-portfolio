@@ -1,10 +1,10 @@
 ---
-
+const { text, href } = Astro.props;
 ---
 
-<a class="btn" href="#about" id="contact-me">
-  <span class="text">Contact me</span>
-  <span aria-hidden="true" class="marquee">Contact me</span>
+<a class="btn" href={href} id="contact-me">
+  <span class="text">{text}</span>
+  <span aria-hidden="true" class="marquee">{text}</span>
 </a>
 
 <style>

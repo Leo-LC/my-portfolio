@@ -23,6 +23,18 @@ import { Icon } from "astro-icon";
     animation-play-state: running;
   }
 
+  @media screen and (prefers-reduced-motion: reduce) {
+    [astro-icon] {
+      animation: none;
+    }
+  }
+
+  @media (max-width: 764px) {
+    button {
+      display: none;
+    }
+  }
+
   @keyframes bounce {
     50% {
       transform: translateY(10%);
@@ -64,7 +76,6 @@ import { Icon } from "astro-icon";
             translateY: "0%",
             animation: "none",
           });
-          gsap.set(icon, {});
           button?.addEventListener("click", scrollToTop);
         } else {
           gsap.to(icon, {

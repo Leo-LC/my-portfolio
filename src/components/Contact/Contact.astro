@@ -22,13 +22,14 @@ import ContactForm from "./ContactForm.tsx";
     }
 
     #contact-wrapper {
-      border: 1px solid var(--border-strong);
-      width: 60vw;
-      background: linear-gradient(
-        to top,
-        var(--bg-primary) 0%,
-        var(--bg-primary) 100% opacity: 0.5;
-      );
+      border: 1px solid var(--text-secondary);
+      width: 80vw;
+    }
+
+    @media screen and (max-width: 768px) {
+      #contact-wrapper {
+        width: 90vw;
+      }
     }
   </style>
 
@@ -39,6 +40,9 @@ import ContactForm from "./ContactForm.tsx";
 
     const wrapper = document.querySelector("#contact-wrapper");
     const contactForm = document.querySelector("#contact-form") as HTMLElement;
+    const contactWrapper = document.querySelector(
+      "#contact-wrapper",
+    ) as HTMLElement;
 
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -59,6 +63,7 @@ import ContactForm from "./ContactForm.tsx";
 
         onComplete: () => {
           contactForm.style.opacity = "1";
+          contactWrapper.style.zIndex = "10";
           tl.kill();
         },
       },

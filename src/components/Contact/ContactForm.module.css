@@ -1,3 +1,10 @@
+form {
+  font-family: var(--paragraph-font-family);
+  color: var(--text-primary);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
 .btn {
   background: var(--slate-a1);
   color: var(--text-primary);
@@ -23,13 +30,13 @@
   transition: opacity 0.2s ease;
 }
 
-.btn .marquee {
+.btn .scroll {
   --spacing: 6rem;
   --start: 0rem;
   --end: 6rem;
   opacity: 0;
   position: relative;
-  animation: marquee 4s linear infinite;
+  animation: scroll 4s linear infinite;
   animation-play-state: paused;
 
   text-shadow:
@@ -42,7 +49,7 @@
   backdrop-filter: blur(6px);
 }
 
-.btn:hover .marquee {
+.btn:hover .scroll {
   animation-play-state: running;
   opacity: 1;
 }
@@ -51,7 +58,7 @@
   opacity: 0;
 }
 
-@keyframes marquee {
+@keyframes scroll {
   0% {
     transform: translateX(var(--start));
   }
@@ -60,43 +67,3 @@
     transform: translateX(var(--end));
   }
 }
-
-form {
-  font-family: var(--paragraph-font-family);
-  color: var(--text-primary);
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-}
-
-/* 
-.button {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  align-items: center;
-  padding: 20px 30px;
-  background-color: var(--component-bg);
-  outline: 3px solid var(--accent-component-bg-hover);
-  outline-offset: -3px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: all 400ms ease-in-out;
-  color: var(--text-primary);
-}
-
-.button:hover,
-.button:active,
-.button:focus {
-  background: linear-gradient(
-    to bottom right,
-    var(--accent-border-primary),
-    var(--accent-border-subtle)
-  );
-  outline: 3px solid
-    linear-gradient(
-      to bottom right,
-      var(--accent-border-primary),
-      var(--accent-border-subtle)
-    );
-} */

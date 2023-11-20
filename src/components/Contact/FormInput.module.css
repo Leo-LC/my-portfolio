@@ -1,11 +1,7 @@
 input:not([type="submit"]),
 textarea {
   background-color: transparent;
-  border-bottom: 1px solid var(--border-strong);
-}
-
-#message {
-  border: 1px solid red;
+  border-bottom: 1px solid var(--text-secondary);
 }
 
 :is(input, textarea)::placeholder {
@@ -47,4 +43,19 @@ textarea {
   transform: translateY(-2rem);
   font-size: 0.8rem;
   color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .input:focus + .label,
+  .input:not(:placeholder-shown) + .label,
+  .textarea:focus + .label,
+  .textarea:not(:placeholder-shown) + .label {
+    transform: translateY(-1rem);
+  }
+
+  .input,
+  .label {
+    font-size: 0.75rem;
+    height: 1.5rem;
+  }
 }

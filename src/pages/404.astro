@@ -1,26 +1,41 @@
 ---
-import "../styles/global.css";
 import Layout from "../layouts/Layout404.astro";
+import "../styles/global.css";
+
+import CTAButton from "../components/Buttons/CTAButton.astro";
 ---
 
 <Layout title="Page not found">
-  <div class="wrapper">
-    <h1 class="text-9xl">404</h1>
-    <h2 class="text-9xl">Page not found</h2>
-    <p class="text-xl">I am sorry, this page does not exist yet.</p>
-    <p class="text-xl">Please let me redirect you</p>
-    <a href="/">Click Here</a>
+  <div class="wrapper-404">
+    <h1 class="text-6xl md:text-8xl lg:text-9xl">404</h1>
+    <h2 class="text-6xl md:text-8xl lg:text-9xl">Page not found</h2>
+    <p class="text-xl md:text-2xl lg:text-4xl">
+      Apologies, this page does not exist yet.
+    </p>
+    <p class="text-xl md:text-2xl lg:text-4xl">Please let me redirect you</p>
+    <CTAButton href="/" text="Back home" />
   </div>
 </Layout>
 
 <style>
-  .wrapper {
-    background-color: var(--bg-primary);
+  .wrapper-404 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100vh;
-    display: grid;
-    gap: 1rem;
-    place-content: center;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     color: var(--text-primary);
+  }
+
+  @media screen and (max-width: 768px) {
+    .wrapper-404 {
+      gap: 1rem;
+    }
   }
 </style>

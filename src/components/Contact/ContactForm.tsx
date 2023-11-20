@@ -19,7 +19,7 @@ const ContactForm = () => {
 
       <div className={styles.btn}>
         <input type="submit" value="Send it !" />
-        <span aria-hidden="true" className={styles.marquee}>
+        <span aria-hidden="true" className={styles.scroll}>
           Send it !
         </span>
 

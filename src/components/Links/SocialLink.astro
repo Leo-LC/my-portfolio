@@ -14,22 +14,39 @@ const {
 
 <a
   href={href}
-  class:list={[classes]}
+  class:list={`${[classes]} test`}
   {...rest}
   target="_blank"
   aria-label={`Link to ${icon.name}`}
+  id={icon}
 >
-  <Icon name={icon} id={icon} color={color} width={size} />
+  <Icon name={icon} color={color} width={size} class="icon" />
 </a>
 
 <style>
   a {
+    position: relative;
     display: grid;
     place-content: center;
+    width: 64px;
+    border-radius: 2rem;
+    pointer-events: none;
+    transition: background-color 0s ease-in-out 0s;
   }
+
   [astro-icon] {
-    transition: color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    pointer-events: auto;
   }
+
+  [astro-icon]:hover {
+    width: 64px;
+  }
+  a:not(#Instagram):hover {
+    background-color: white;
+    transition: background-color 0.2s ease-in-out 0.1s;
+  }
+
   [astro-icon="fa:facebook-square"]:hover {
     color: #3b5998;
   }
