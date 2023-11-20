@@ -39,6 +39,6 @@
     "splitting": "^1.0.6"
   },
   "pnpm": {
-    "packageManager": "8.10.5"
+    "packageManager": "v8.10.5"
   }
 }
