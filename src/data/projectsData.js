@@ -3,7 +3,7 @@ import Coffee from "../images/Coffee.jpg";
 const projectsData = [
   {
     id: 1,
-    title: "Portfolio Nina Carducci",
+    title: "Nina Carducci",
     description:
       "Le challenge était d'optimiser le site de la photographe Nina Carducci. Il a fallu reprendre l'ensemble de ses photos et les optimiser pour le web. J'ai également pris le temps de réaliser un référencement local afin d'améliorer sa visibilité auprès de clients potentiels. Amélioration du SEO.",
     technologies: ["React ", "CSS ", "Lighthouse ", "Wave "],
@@ -15,7 +15,7 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Débug Application Reac",
+    title: "Debug",
     description:
       "Le client possédait déjà un site de présentation de ses projets. En revance, celui-ci comportait plusieurs soucis et 'bugs' techniques qu'il a fallu identifier et corriger",
     technologies: ["React", "Browser Devtools"],
@@ -35,6 +35,17 @@ const projectsData = [
     source: Coffee,
     name: "Project 3",
     github: "https://github.com/Leo-LC/projet_11",
+    website: null,
+  },
+  {
+    id: 4,
+    title: "Portfolioception",
+    description: "Mon portfolio personnel sur lequel vous naviguez",
+    technologies: ["Astro", "Lenis", "Javascript"],
+    client: "Moi-même",
+    source: Coffee,
+    name: "Project 4",
+    github: "",
     website: null,
   },
 ];

@@ -4,19 +4,24 @@ import { Icon } from "astro-icon";
 
 <button
   id="scrollToTop"
-  class="border border-[var(--text-primary)] rounded-lg z-10 cursor-pointer fixed bottom-[var(--footer-height)] mb-4 right-10"
+  class="border-b border-[var(--text-primary)] rounded-lg cursor-pointer absolute"
 >
   <Icon
     id="icon"
     name="ph:arrow-down-thin"
     width="48px"
-    height="100px"
+    height="80px"
     fill="var(--border-strong)"
     color="var(--text-primary)"
   />
 </button>
 
 <style>
+  button {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1rem;
+  }
   [astro-icon] {
     transform: translateY(-10%);
     animation: bounce 2s infinite ease-in-out;
@@ -42,7 +47,7 @@ import { Icon } from "astro-icon";
   }
 </style>
 
-<script>
+<!-- <script>
   import Lenis from "@studio-freight/lenis";
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -87,4 +92,4 @@ import { Icon } from "astro-icon";
       },
     },
   });
-</script>
+</script> -->

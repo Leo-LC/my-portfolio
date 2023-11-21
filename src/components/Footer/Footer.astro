@@ -1,25 +1,25 @@
 ---
 import DateAPI from "../API/DateAPI/DateAPI";
-import WeatherAPI from "../API/WeatherAPI/WeatherAPI";
-/* import SpotifyAPI from "../API/SpotifyAPI/SpotifyAPI"; */
 
 const date = new Date();
 const year = date.getFullYear();
 ---
 
-<footer
-  transition:persist
-  class="flex text-base justify-between p-4 relative bottom-0 overflow-hidden"
->
-  <div></div>
+<footer class="flex text-base p-4 relative bottom-0 overflow-hidden">
   <p class="flex md:hidden">&#169; {year}</p>
-  <p class="hidden md:flex">Copyright {year}</p>
+  <p class="hidden md:flex">Copyright &#169; {year} all rights reserved</p>
   <DateAPI client:load />
 </footer>
 
 <style>
   footer {
     color: var(--text-primary);
-    border-top: 1px solid white;
+    border-top: 1px solid var(--text-primary);
+  }
+
+  p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 </style>

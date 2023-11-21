@@ -26,7 +26,7 @@ const DateAPI = () => {
     setDisplayDate(formattedDate);
   }, []);
 
-  return <p>{displayDate}</p>;
+  return <p id="dateAPI">{displayDate}</p>;
 };
 
 export default DateAPI;

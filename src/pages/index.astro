@@ -44,24 +44,26 @@ import Skills from "../components/Skills/Skills.astro";
 
 <script>
   import Lenis from "@studio-freight/lenis";
+  const lenis = new Lenis({
+    smoothTouch: true,
+  });
 
-  const lenis = new Lenis();
-  lenis.on("scroll", (e: Lenis) => {});
+  const linkScroll = () => {
+    const links = document.querySelectorAll(".nav__item, .nav__name");
+
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const href = link.getAttribute("href");
+        lenis.scrollTo(href);
+      });
+    });
+  };
 
   function raf(time: number) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
-
-  const links = document.querySelectorAll(".nav__item, .nav__name");
-
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const href = link.getAttribute("href");
-      lenis.scrollTo(href);
-    });
-  });
-
   requestAnimationFrame(raf);
+  linkScroll();
 </script>

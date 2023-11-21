@@ -1,64 +1,30 @@
 ---
-import "@splidejs/splide/css";
+import ProjectCard from "./ProjectCard.astro";
 import projectsData from "../../data/projectsData";
-
-import ProjectSlide from "../Works/ProjectSlide.astro";
-import Icon from "astro-icon";
+import "./projects.css";
 ---
 
-<!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="m14 7l-5 5l5 5V7z"/></svg> -->
-<section class="splide" aria-label="Splide Basic HTML Example">
-  <ul class="splide__pagination"></ul>
-  <!--   <div class="splide__arrows">
-    <button class="splide__arrow splide__arrow--prev">
-      <Icon name="ic:sharp-arrow-right" />
-    </button>
-    <button class="splide__arrow splide__arrow--next"> Next</button>
-  </div> -->
-  <div class="splide__track">
-    <ul class="splide__list">
-      {
-        projectsData.map((project) => (
-          <ProjectSlide
-            src={project.source}
-            description={project.description}
-            technologies={project.technologies}
-            client={project.client}
-            website={project.website}
-            github={project.github}
-            title={project.title.toUpperCase()}
-          />
-        ))
-      }
-    </ul>
-  </div>
-</section>
+<div class="wrapper">
+  {
+    projectsData.map((project, index) => (
+      <ProjectCard
+        index={`#0${index + 1}`}
+        title={project.title.toUpperCase()}
+        technologies={project.technologies.toLocaleString().toUpperCase()}
+        github={project.github}
+      />
+    ))
+  }
+</div>
 
 <style>
-  .splide {
-    box-sizing: border-box;
-    position: relative;
-    height: 100%;
+  .wrapper {
+    color: white;
+    max-height: 100%;
+    display: grid;
+    margin-block: auto;
+    z-index: 1;
+    border-top: 1px solid white;
+    overflow: hidden;
   }
-  .splide__pagination {
-    bottom: 2rem;
-  }
-  /*   .splide .splide__arrow {
-    background-color: transparent;
-    color: blue;
-    font-size: 2rem;
-  } */
 </style>
-
-<script>
-  import Splide from "@splidejs/splide";
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const splide = new Splide(".splide", {
-      type: "loop",
-      speed: 1000,
-      lazyLoad: "nearby",
-    });
-    splide.mount();
-  });
-</script>

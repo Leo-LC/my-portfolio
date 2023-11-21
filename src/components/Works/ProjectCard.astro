@@ -1,0 +1,98 @@
+---
+import Icon from "astro-icon";
+import "./projects.css";
+const { index, title, technologies, github } = Astro.props;
+---
+
+<div class="card" data-type="card">
+  <div class="background">
+    <img src="src/images/sculpt-1.jpg" alt="test" />
+  </div>
+  <span class="index">{index}</span>
+  <span class="title">{title}</span>
+  <span class="technos">{technologies}</span>
+
+  <a
+    class="flex flex-row"
+    href={github}
+    target="_blank"
+    aria-label={`Link to the Repo of ${title}`}
+    id={index}
+  >
+    <Icon name="fa:github-square" color="white" width="24px" class="icon" />
+  </a>
+</div>
+
+<style>
+  .card {
+    position: relative;
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    grid-template-columns: 10% 1fr auto auto;
+    overflow: hidden;
+    transition: all 1s ease;
+    cursor: pointer;
+    border-block: 1px solid var(--text-primary);
+    padding-inline-end: 2rem;
+  }
+
+  .index,
+  .title {
+    font-family: var(--headings-font-family);
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  .technos {
+    font-family: var(--paragraph-font-family);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .card:hover {
+    padding-block: 2rem;
+  }
+  .card:hover .background {
+    top: 0;
+  }
+  .background {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 1s ease;
+  }
+
+  .background img {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  a {
+    position: relative;
+    display: grid;
+    place-content: center;
+    width: 48px;
+    border-radius: 2rem;
+    pointer-events: none;
+    transition: background-color 0s ease-in-out 0s;
+  }
+
+  [astro-icon] {
+    transition: all 0.2s ease-in-out;
+    pointer-events: auto;
+  }
+
+  [astro-icon]:hover {
+    width: 48px;
+    color: #333;
+  }
+
+  a:hover {
+    background-color: white;
+    transition: background-color 0.2s ease-in-out 0.1s;
+  }
+</style>

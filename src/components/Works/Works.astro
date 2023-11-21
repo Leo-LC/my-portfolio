@@ -1,10 +1,6 @@
 ---
 import SectionTitle from "../Text/SectionTitle/SectionTitle";
 import ProjectsCarousel from "./ProjectsCarousel.astro";
-import WorksCard from "./WorksCard.astro";
-import { Image } from "astro:assets";
-
-import image from "../../images/Travel.jpg";
 ---
 
 <section
@@ -13,16 +9,7 @@ import image from "../../images/Travel.jpg";
 >
   <SectionTitle client:visible title="Some of my Recent projects . " />
 
-  <!--  <div class="overlay hidden xl:flex absolute z-10 flex-col text-center">
-      <span>Project</span>
-      <div class="clip">
-        <h4>Nom du Projet</h4>
-      </div>
-    </div> -->
-
-  <div class="p-8">
-    <ProjectsCarousel />
-  </div>
+  <ProjectsCarousel />
 </section>
 
 <style>
@@ -30,72 +17,3 @@ import image from "../../images/Travel.jpg";
     height: 100svh;
   }
 </style>
-
-<!-- Overflay Styling -->
-<!-- <style>
-  .overlay {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .overlay span {
-    text-transform: uppercase;
-    font-size: 2rem;
-    line-height: 1;
-  }
-
-  .overlay h4 {
-    font-family: var(--headings-font-family);
-    font-size: 4rem;
-    line-height: 1;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  .clip {
-    background-color: transparent;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
-  .reveal {
-    animation: reveal 0.3s ease-in-out;
-  }
-  @keyframes reveal {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-</style> -->
-<!-- Overlay Script -->
-<!-- <script>
-  const cards = document.querySelectorAll(".card");
-  const overlay = document.querySelector(".overlay") as HTMLElement;
-  const overlayTitle = overlay.querySelector("h4") as HTMLElement;
-
-  cards.forEach((card) => {
-    card.addEventListener("mouseover", (e) => {
-      overlayTitle.classList.add("reveal");
-
-      overlay.style.opacity = "1";
-
-      cards.forEach((c) => {
-        c.setAttribute("data-active", "false");
-      });
-      card.setAttribute("data-active", "true");
-    });
-
-    card.addEventListener("mouseout", () => {
-      overlay.style.opacity = "0";
-      overlayTitle.classList.remove("reveal");
-      cards.forEach((c) => {
-        c.setAttribute("data-active", "true");
-      });
-    });
-  });
-</script> -->
