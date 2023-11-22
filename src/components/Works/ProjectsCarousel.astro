@@ -10,7 +10,7 @@ import "./projects.css";
       <ProjectCard
         index={`#0${index + 1}`}
         title={project.title.toUpperCase()}
-        technologies={project.technologies.toLocaleString().toUpperCase()}
+        technologies={project.technologies}
         github={project.github}
       />
     ))
@@ -20,11 +20,10 @@ import "./projects.css";
 <style>
   .wrapper {
     color: white;
-    max-height: 100%;
+    padding-block: 2rem;
     display: grid;
     margin-block: auto;
     z-index: 1;
-    border-top: 1px solid white;
     overflow: hidden;
   }
 </style>

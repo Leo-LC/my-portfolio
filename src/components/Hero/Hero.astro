@@ -23,14 +23,10 @@ import CTAButton from "../Buttons/CTAButton.astro";
         </h3>
       </div>
       <div class="clip">
-        <h1 class="text-[6rem] md:text-[10rem] xl:text-[12rem] uppercase">
-          Front-End
-        </h1>
+        <h1 class="uppercase">Front-End</h1>
       </div>
       <div class="clip">
-        <h1 class="text-[6rem] md:text-[10rem] xl:text-[12rem] uppercase">
-          Developer
-        </h1>
+        <h1 class="uppercase">Developer</h1>
       </div>
       <div class="clip">
         <h3 id="last-line" class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
@@ -66,6 +62,19 @@ import CTAButton from "../Buttons/CTAButton.astro";
     font-family: var(--headings-font-family);
     font-weight: var(--headings-font-weight);
     line-height: 0.95;
+    font-size: 12rem;
+  }
+
+  @media screen and (max-width: 1280px) {
+    h1 {
+      font-size: 10rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 5rem;
+    }
   }
 
   h3 {

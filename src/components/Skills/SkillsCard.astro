@@ -2,7 +2,7 @@
 
 ---
 
-<div class="cards-wrapper relative z-[1] grid gap-2 py-8">
+<div class="cards-wrapper relative z-[1] grid gap-2">
   <div class="card">
     <div class="card_content">
       <i class="fa-brands fa-react"></i>
@@ -200,21 +200,21 @@
 
 <style>
   .cards-wrapper {
-    grid-template-columns: repeat(2, 40vw);
-    grid-auto-rows: 40vw;
+    grid-template-columns: repeat(8, 10vw);
+    grid-auto-rows: 10vw;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 1280px) {
     .cards-wrapper {
       grid-template-columns: repeat(4, 20vw);
       grid-auto-rows: 20vw;
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (max-width: 768px) {
     .cards-wrapper {
-      grid-template-columns: repeat(8, 10vw);
-      grid-auto-rows: 10vw;
+      grid-template-columns: repeat(2, 40vw);
+      grid-auto-rows: 40vw;
     }
   }
 

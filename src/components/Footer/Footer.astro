@@ -1,14 +1,14 @@
 ---
-import DateAPI from "../API/DateAPI/DateAPI";
-
-const date = new Date();
-const year = date.getFullYear();
+import { CurrentDate, CurrentYear } from "../API/DateAPI/DateAPI";
+import "./footer.css";
 ---
 
-<footer class="flex text-base p-4 relative bottom-0 overflow-hidden">
-  <p class="flex md:hidden">&#169; {year}</p>
-  <p class="hidden md:flex">Copyright &#169; {year} all rights reserved</p>
-  <DateAPI client:load />
+<footer class="flex p-4 relative bottom-0 overflow-hidden">
+  <p class="footer_text flex lg:hidden">&#169; {CurrentYear}</p>
+  <p class="footer_text hidden lg:flex">
+    Copyright &#169; {CurrentYear} all rights reserved
+  </p>
+  <CurrentDate client:load />
 </footer>
 
 <style>

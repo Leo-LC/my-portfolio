@@ -50,12 +50,14 @@ import Skills from "../components/Skills/Skills.astro";
 
   const linkScroll = () => {
     const links = document.querySelectorAll(".nav__item, .nav__name");
+    const hamburger = document.querySelector("#check-menu") as HTMLInputElement;
 
     links.forEach((link) => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
         const href = link.getAttribute("href");
         lenis.scrollTo(href);
+        hamburger.checked && (hamburger.checked = false);
       });
     });
   };

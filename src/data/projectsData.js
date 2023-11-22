@@ -6,7 +6,7 @@ const projectsData = [
     title: "Nina Carducci",
     description:
       "Le challenge était d'optimiser le site de la photographe Nina Carducci. Il a fallu reprendre l'ensemble de ses photos et les optimiser pour le web. J'ai également pris le temps de réaliser un référencement local afin d'améliorer sa visibilité auprès de clients potentiels. Amélioration du SEO.",
-    technologies: ["React ", "CSS ", "Lighthouse ", "Wave "],
+    technologies: ["React", "CSS", "Lighthouse", "Wave"],
     client: "OpenClassrooms",
     source: Coffee,
     name: "Project 9",
@@ -18,7 +18,7 @@ const projectsData = [
     title: "Debug",
     description:
       "Le client possédait déjà un site de présentation de ses projets. En revance, celui-ci comportait plusieurs soucis et 'bugs' techniques qu'il a fallu identifier et corriger",
-    technologies: ["React", "Browser Devtools"],
+    technologies: ["React", "Devtools", "Something"],
     client: "OpenClassrooms",
     source: Coffee,
     name: "Project 2",
@@ -30,7 +30,7 @@ const projectsData = [
     title: "Argent Bank",
     description:
       "Double challenge ici. Dans un premier temps, se servir des wireframes et de la base de donneé existante pour réaliser les appels à l'API pour les requêtes stipulées par le client. Dans un second temps, il a fallu créer des routes API pour de futures fonctionnalités en respectant les principes existants.",
-    technologies: ["Javascript", "React", "CSS"],
+    technologies: ["JS", "React", "CSS"],
     client: "OpenClassrooms",
     source: Coffee,
     name: "Project 3",
@@ -41,7 +41,7 @@ const projectsData = [
     id: 4,
     title: "Portfolioception",
     description: "Mon portfolio personnel sur lequel vous naviguez",
-    technologies: ["Astro", "Lenis", "Javascript"],
+    technologies: ["Astro", "Lenis", "JS"],
     client: "Moi-même",
     source: Coffee,
     name: "Project 4",

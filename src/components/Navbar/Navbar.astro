@@ -1,14 +1,11 @@
 ---
 import NavLinks from "../Links/NavLinks.astro";
 import { Icon } from "astro-icon";
+import "./navbar.css";
 ---
 
 <nav class="nav relative flex justify-between">
-  <a
-    class="nav__name full-name text-2xl md:text-4xl xl:text-6xl"
-    href="#hero"
-    id="nametag">LEO LECEE</a
-  >
+  <a class="nav__name full-name" href="#hero" id="nametag">LEO LECEE</a>
   <input type="checkbox" id="check-menu" class="hidden" />
   <label class="cursor-pointer hamburger hidden" for="check-menu">
     <Icon
@@ -30,71 +27,9 @@ import { Icon } from "astro-icon";
   </div>
 </nav>
 
-<style is:global>
+<style>
   nav {
     font-family: var(--headings-font-family);
     height: 100%;
-  }
-
-  a:hover {
-    letter-spacing: 1px;
-  }
-
-  @media (max-width: 768px) {
-    nav {
-      padding: 0.5rem;
-    }
-    .nav__menu {
-      position: absolute;
-      left: 0;
-      top: 100%;
-      width: 100%;
-      height: 0px;
-      overflow: hidden;
-
-      transition: 0.3s ease-in-out;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(50px);
-    }
-
-    .nav__menu .nav__item {
-      opacity: 0;
-      transform: translateY(-10rem);
-      transition: 1s ease-in-out;
-      transition-delay: calc(var(--delay) * -1 * 0.1s);
-    }
-
-    .hamburger {
-      display: inline-flex;
-    }
-
-    .hamburger #menu-open {
-      display: flex;
-    }
-
-    .hamburger #menu-close {
-      display: none;
-    }
-
-    #check-menu:checked ~ .hamburger #menu-open {
-      display: none;
-    }
-
-    #check-menu:checked ~ .hamburger #menu-close {
-      display: block;
-    }
-
-    #check-menu:checked ~ .nav__menu {
-      height: 100vh;
-    }
-
-    #check-menu:checked ~ .nav__menu .nav__item {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 </style>

@@ -2,11 +2,10 @@
   "name": "my-portfolio",
   "type": "module",
   "version": "0.0.1",
-  "packageManager":"pnpm@8.10.5",
+  "packageManager": "pnpm@8.10.5",
   "engines": {
     "node": "20.5.1"
   },
-  
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

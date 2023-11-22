@@ -30,12 +30,13 @@ import SocialLink from "./SocialLink.astro";
     height: 260px;
     background: var(--text-primary);
   }
-  @media screen and (max-width: 768px) {
+
+  @media screen and (max-width: 1024px) {
     .social {
       height: fit-content;
       align-items: center;
       flex-direction: row;
-      top: calc(var(--header-height) + 2rem);
+      top: calc(var(--header-height) + 4rem);
       left: 0;
     }
     ul {
@@ -43,8 +44,18 @@ import SocialLink from "./SocialLink.astro";
     }
 
     #socialLine {
-      width: 40px;
+      width: 100px;
       height: 2px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .social {
+      top: calc(var(--header-height) + 2rem);
+    }
+
+    #socialLine {
+      width: 40px;
     }
   }
 </style>
