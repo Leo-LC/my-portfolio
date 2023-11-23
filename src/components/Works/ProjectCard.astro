@@ -1,7 +1,7 @@
 ---
-import Icon from "astro-icon";
+/* import { Image } from "astro:assets"; */
 import "./projects.css";
-const { index, title, technologies, github } = Astro.props;
+const { index, title, tags, github, src } = Astro.props;
 ---
 
 <a
@@ -12,27 +12,31 @@ const { index, title, technologies, github } = Astro.props;
   class="card"
   data-type="card"
 >
-  <div class="background">
-    <img src="src/images/sculpt-1.jpg" alt="test" />
-  </div>
+  <!--   <Image src={src} alt="test" /> -->
+  <!--  <div class="background">
+    <span class="link">See the repo</span>
+  </div> -->
   <span class="index">{index}</span>
   <span class="title">{title}</span>
-  <ul class="technos">
-    {technologies.map((tech: string) => <li>{tech}.</li>)}
+  <ul class="tags">
+    {tags.map((tag: string) => <li>{tag}.</li>)}
   </ul>
 
   <!--  <Icon name="fa:github-square" color="white" width="24px" class="icon" /> -->
 </a>
 
 <style>
-  .technos {
+  .tags {
     display: flex;
-    flex-wrap: wrap;
+    font-family: var(--paragraph-font-family);
+    font-size: 1.5rem;
+    line-height: 1;
   }
   .card {
     position: relative;
     display: grid;
     align-items: center;
+    place-content: center;
     gap: 1rem;
     grid-template-columns: 10% 1fr auto;
     overflow: hidden;
@@ -54,15 +58,10 @@ const { index, title, technologies, github } = Astro.props;
     line-height: 1;
   }
 
-  .technos {
-    font-family: var(--paragraph-font-family);
-    font-size: 1.5rem;
-    line-height: 1;
-  }
-
   .card:hover {
     padding-block: 2rem;
   }
+
   .card:hover .background {
     top: 0;
   }
@@ -74,6 +73,8 @@ const { index, title, technologies, github } = Astro.props;
     height: 100%;
     z-index: -1;
     transition: all 1s ease;
+    display: flex;
+    align-items: center;
   }
 
   .background img {
@@ -94,7 +95,7 @@ const { index, title, technologies, github } = Astro.props;
       font-size: 4rem;
     }
 
-    .technos {
+    .tags {
       display: flex;
 
       font-size: 1.2rem;
@@ -116,7 +117,7 @@ const { index, title, technologies, github } = Astro.props;
       font-size: 2rem;
     }
 
-    .technos {
+    .tags {
       font-size: 1rem;
       flex-direction: column;
       text-align: right;
