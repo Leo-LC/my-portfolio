@@ -99,6 +99,9 @@ import SectionTitle from "../Text/SectionTitle/SectionTitle";
 
 <script>
   import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
 
   const text = document.querySelectorAll(".details_wrapper > p");
 
