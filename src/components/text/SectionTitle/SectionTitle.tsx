@@ -2,6 +2,9 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 import styles from "./SectionTitle.module.css";
 
 interface Props {
@@ -12,17 +15,33 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
   const firstLine = useRef<HTMLHeadingElement>(null);
   const secondLine = useRef<HTMLHeadingElement>(null);
   const thirdLine = useRef<HTMLHeadingElement>(null);
+
   const slider = useRef<HTMLDivElement>(null);
 
   let xPercent = 0;
+
   let direction = -1;
   const speed = 0.1;
+  // Infinite scroll animation
+  const animation = () => {
+    gsap.set(firstLine.current, { xPercent: xPercent });
+    gsap.set(secondLine.current, { xPercent: xPercent });
+    gsap.set(thirdLine.current, { xPercent: xPercent });
+
+    if (xPercent < -100) {
+      xPercent = 0;
+    }
+    if (xPercent > 0) {
+      xPercent = -100;
+    }
+
+    xPercent += (speed * direction) / 4;
+    requestAnimationFrame(animation);
+  };
 
   //Call animation on mount and handles the reverse animation on scroll
-  /* useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
     requestAnimationFrame(animation);
-
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
@@ -32,24 +51,9 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
 
         onUpdate: (e) => (direction = e.direction * -1),
       },
-      x: -300,
+      x: -100,
     });
-  }, []); */
-
-  // Infinite animation of the text
-  /* const animation = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    }
-    if (xPercent > 0) {
-      xPercent = -100;
-    }
-    gsap.set(firstLine.current, { xPercent: xPercent });
-    gsap.set(secondLine.current, { xPercent: xPercent });
-    gsap.set(thirdLine.current, { xPercent: xPercent });
-    xPercent += (speed * direction) / 4;
-    requestAnimationFrame(animation);
-  }; */
+  }, []);
 
   return (
     <div className="flex relative z-[1] section-title" id="sliderContainer">

@@ -2,8 +2,8 @@
 import { Icon } from "astro-icon";
 ---
 
-<button
-  id="scrollToTop"
+<span
+  id="hero_arrow"
   class="border-b border-[var(--text-primary)] rounded-lg cursor-pointer absolute"
 >
   <Icon
@@ -14,10 +14,10 @@ import { Icon } from "astro-icon";
     fill="var(--border-strong)"
     color="var(--text-primary)"
   />
-</button>
+</span>
 
 <style>
-  button {
+  span {
     left: 50%;
     transform: translateX(-50%);
     bottom: 1rem;
@@ -46,50 +46,3 @@ import { Icon } from "astro-icon";
     }
   }
 </style>
-
-<!-- <script>
-  import Lenis from "@studio-freight/lenis";
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
-
-  const icon = document.querySelector("#icon");
-  const button = document.querySelector("#scrollToTop");
-  const trigger = document.querySelector("#about");
-
-  const lenis = new Lenis();
-  function raf(time: number) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  const scrollToTop = () => {
-    lenis.scrollTo(0);
-  };
-
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: trigger,
-      start: "top 50%",
-      end: "top 50%",
-      scrub: false,
-      onUpdate: (self) => {
-        if (self.direction === 1) {
-          gsap.to(icon, {
-            scaleY: -1,
-            translateY: "0%",
-            animation: "none",
-          });
-          button?.addEventListener("click", scrollToTop);
-        } else {
-          gsap.to(icon, {
-            scaleY: 1,
-            translateY: "-10%",
-            animation: "bounce 2s infinite ease-in-out",
-          });
-        }
-      },
-    },
-  });
-</script> -->

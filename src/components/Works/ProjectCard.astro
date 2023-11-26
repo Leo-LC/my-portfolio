@@ -12,17 +12,13 @@ const { index, title, tags, github, src } = Astro.props;
   class="card"
   data-type="card"
 >
-  <!--   <Image src={src} alt="test" /> -->
-  <!--  <div class="background">
-    <span class="link">See the repo</span>
-  </div> -->
   <span class="index">{index}</span>
   <span class="title">{title}</span>
   <ul class="tags">
     {tags.map((tag: string) => <li>{tag}.</li>)}
   </ul>
 
-  <!--  <Icon name="fa:github-square" color="white" width="24px" class="icon" /> -->
+
 </a>
 
 <style>
