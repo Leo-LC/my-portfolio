@@ -5,15 +5,25 @@ import ProjectsCarousel from "./ProjectsCarousel.astro";
 
 <section
   id="works"
-  class="relative pt-[var(--header-height)] pb-[var(--footer-height)] flex flex-col min-h-screen overflow-hidden"
+  class="relative pt-[var(--header-height)] pb-[var(--footer-height)] gap-4 flex flex-col min-h-screen overflow-hidden"
 >
   <SectionTitle client:visible title="Some of my Recent projects . " />
-
   <ProjectsCarousel />
+  <!--   <span class="quote relative italic"> Clic to see the repo</span>
+ -->
 </section>
 
 <style>
   section {
     height: 100svh;
+  }
+
+  .quote {
+    font-size: 1.75rem;
+    text-align: center;
+    font-family: var(--paragraph-font-family);
+    font-weight: 200;
+    color: var(--text-secondary);
+    transform: translateY(-100%);
   }
 </style>
