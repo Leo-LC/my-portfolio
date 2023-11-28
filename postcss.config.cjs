@@ -4,7 +4,7 @@ module.exports = {
     require("cssnano"),
     require("stylelint"),
     purgecss({
-      content: ["./**/*.html"],
+      content: ["./**/*.html", "./**/*.astro", "./**/*.tsx"],
       css: ["./**/*.css"],
     }),
   ],

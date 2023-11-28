@@ -5,5 +5,4 @@ export default {
     extend: {},
   },
   plugins: [],
-  purge: ["./src/**/*.html", "./src/**/*.astro", "./src/**/*.tsx"],
 };
