@@ -20,6 +20,15 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.2
     version: 5.0.2(astro@3.5.3)(tailwindcss@3.3.5)
+  '@fontsource-variable/mulish':
+    specifier: ^5.0.16
+    version: 5.0.16
+  '@fontsource/anton':
+    specifier: ^5.0.17
+    version: 5.0.17
+  '@fontsource/mulish':
+    specifier: ^5.0.15
+    version: 5.0.15
   '@radix-ui/colors':
     specifier: ^3.0.0
     version: 3.0.0
@@ -986,6 +995,18 @@ packages:
 
   /@floating-ui/utils@0.1.6:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
+    dev: false
+
+  /@fontsource-variable/mulish@5.0.16:
+    resolution: {integrity: sha512-4LgDBwbt1GbfO0gRgTpUbooc+OYNmnPqJQcGZs/zShmED0Y0BV/w/zpgDjCnrsjYRTCmozUNmOlM/YLbLS72Aw==}
+    dev: false
+
+  /@fontsource/anton@5.0.17:
+    resolution: {integrity: sha512-Jd2x8w4S+f6CqqvhMxJSDCdo4IRhfJ9716PfZ7tT+jzBw/k5f8Ap8R0FqoQ0h2oqMGAV1vrvfoVo/kXP0cmXLw==}
+    dev: false
+
+  /@fontsource/mulish@5.0.15:
+    resolution: {integrity: sha512-tlV9cw6Uvg9cJtlMXilJcafZnVP1F5mptWe+XnyFaIeQobcpG5aw90Xyyl7l/h/6OanYXI8psWvl6ul10k2D1w==}
     dev: false
 
   /@fullhuman/postcss-purgecss@5.0.0(postcss@8.4.31):

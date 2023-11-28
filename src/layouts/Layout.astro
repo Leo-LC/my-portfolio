@@ -5,6 +5,9 @@ import Head from "./Head.astro";
 import "@radix-ui/themes/styles.css";
 import "../styles/global.css";
 
+import "@fontsource/anton";
+import "@fontsource/mulish/200.css";
+
 import { Image } from "astro:assets";
 import bg from "../images/sculpture.jpg";
 
@@ -47,7 +50,9 @@ const { title } = Astro.props;
       import simpleParallax from "simple-parallax-js";
       const image = document.getElementsByClassName("thumbnail");
 
-      new simpleParallax(image, {});
+      new simpleParallax(image, {
+        scale: 1.1,
+      });
 
       /* GSAP  */
       import gsap from "gsap";
