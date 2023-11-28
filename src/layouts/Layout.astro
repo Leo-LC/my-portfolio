@@ -20,7 +20,7 @@ const { title } = Astro.props;
         src={bg}
         alt="background"
         class="background__image thumbnail"
-        width="1920"
+        loading="eager"
       />
     </div>
 
@@ -37,6 +37,7 @@ const { title } = Astro.props;
       .background__image {
         height: 100vh;
         object-fit: cover;
+        opacity: 1;
       }
     </style>
 
