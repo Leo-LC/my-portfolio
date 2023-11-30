@@ -13,14 +13,14 @@ import CTAButton from "../Buttons/CTAButton.astro";
   >
     <div class="text-center">
       <div class="clip">
-        <p id="first-line" class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
+        <h3 id="first-line" class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
           Hi my name is Léo,
-        </p>
+        </h3>
       </div>
       <div class="clip">
-        <p class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
+        <h3 class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
           I am a dedicated, passionate
-        </p>
+        </h3>
       </div>
       <div class="clip">
         <h1 class="uppercase">Front-End</h1>
@@ -29,9 +29,9 @@ import CTAButton from "../Buttons/CTAButton.astro";
         <h1 class="uppercase">Developer</h1>
       </div>
       <div class="clip">
-        <p id="last-line" class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
+        <h3 id="last-line" class="text-[1.75rem] md:text-5xl xl:text-[3.5rem]">
           Let's create YOUR web today.
-        </p>
+        </h3>
       </div>
     </div>
     <CTAButton text="Contact me" href="#contact" />
@@ -162,6 +162,7 @@ import CTAButton from "../Buttons/CTAButton.astro";
     duration: 1,
     ease: "power2.inOut",
   })
+
     .fromTo(
       navItems,
       {
@@ -173,6 +174,7 @@ import CTAButton from "../Buttons/CTAButton.astro";
         duration: 0.5,
       },
     )
+
     .from(clipped, {
       yPercent: 100,
       stagger: 0.2,
@@ -190,6 +192,9 @@ import CTAButton from "../Buttons/CTAButton.astro";
         ease: "power2.inOut",
       },
     )
+    .set(header, {
+      overflow: "visible",
+    })
     .fromTo(
       scrollArrow,
       {

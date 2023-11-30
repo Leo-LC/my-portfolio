@@ -16,16 +16,6 @@ h2::after {
   color: transparent;
 }
 
-.sliderContainer::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  /*   background: var(--color-primary); */
-  background-color: transparent;
-}
-
 .slider h2:nth-of-type(2) {
   position: absolute;
   left: 100%;

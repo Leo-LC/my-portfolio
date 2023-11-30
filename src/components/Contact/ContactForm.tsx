@@ -32,7 +32,16 @@ const ContactForm = () => {
           }}
           aria-hidden="true"
         >
-          <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" />
+          <input
+            type="text"
+            name="_gotcha"
+            id="_gotcha"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+          <label htmlFor="_gotcha" className="visually-hidden">
+            Anti Bot Input
+          </label>
         </div>
       </div>
     </form>

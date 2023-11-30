@@ -57,7 +57,7 @@ const SectionTitle: React.FC<Props> = ({ title }) => {
   }, []);
 
   return (
-    <div className="flex relative z-[1] section-title" id="sliderContainer">
+    <div className="flex relative z-[1] section-title">
       <div
         ref={slider}
         className={`${styles.slider} flex relative bg-transparent z-[1] whitespace-nowrap`}

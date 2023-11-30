@@ -17,7 +17,11 @@ import SocialLink from "./SocialLink.astro";
       socialData.map((item) => {
         return (
           <li>
-            <SocialLink href={item.href} icon={item.icon} id={item.name} />
+            <SocialLink
+              href={item.href}
+              icon={item.icon}
+              id={`social-${item.name}`}
+            />
           </li>
         );
       })

@@ -156,14 +156,6 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-/* a:hover {
-  color: var(--accent-text-primary);
-}
-
-a:active {
-  color: var(--accent-text-secondary);
-} */
-
 h1,
 h2,
 h3,
@@ -172,19 +164,12 @@ h5,
 h6 {
   pointer-events: none;
 }
-
-.disappear {
-  animation: disappear 0.5s ease-in-out forwards;
-}
-
-@keyframes disappear {
-  0% {
-    opacity: 1;
-    display: auto;
-  }
-
-  100% {
-    opacity: 0;
-    display: none;
-  }
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
 }
