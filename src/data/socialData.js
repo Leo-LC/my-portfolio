@@ -2,22 +2,22 @@ const socialData = [
   {
     name: "Github",
     icon: "fa:github-square",
-    href: "https://www.github.com",
+    href: "https://github.com/Leo-LC",
   },
   {
-    name: "Facebook",
-    icon: "fa:facebook-square",
-    href: "https://www.facebook.com",
+    name: "Twitter",
+    icon: "fa6-brands:x-twitter",
+    href: "https://twitter.com/Leo_Lecee",
   },
   {
     name: "Instagram",
     icon: "fa:instagram",
-    href: "https://www.instagram.com",
+    href: "https://www.instagram.com/leo_ceele/",
   },
   {
     name: "LinkedIn",
     icon: "fa:linkedin-square",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/leolecee/",
   },
 ];
 
