@@ -45,8 +45,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.95);
   }
 
   .nav__menu .nav__item {

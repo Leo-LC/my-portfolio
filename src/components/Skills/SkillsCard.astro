@@ -60,17 +60,17 @@ import { Icon } from "astro-icon";
     grid-auto-rows: 10vw;
   }
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1279px) {
     .cards-wrapper {
       grid-template-columns: repeat(4, 20vw);
       grid-auto-rows: 20vw;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .cards-wrapper {
-      grid-template-columns: repeat(2, 40vw);
-      grid-auto-rows: 40vw;
+      grid-template-columns: repeat(2, 30vw);
+      grid-auto-rows: 30vw;
     }
   }
 
@@ -129,10 +129,9 @@ import { Icon } from "astro-icon";
     width: calc(100% - 2px);
   }
 
-  svg,
-  .svg-inline--fa {
-    width: 50px;
-    height: 50px;
+  [astro-icon] {
+    width: 60px;
+    height: 60px;
     font-size: 50px;
   }
 
@@ -143,16 +142,15 @@ import { Icon } from "astro-icon";
     color: var(--text-secondary);
   }
 
-  @media screen and (min-width: 768px) {
-    svg,
-    .svg-inline--fa {
-      width: 60px;
-      height: 60px;
-      font-size: 60px;
+  @media screen and (max-width: 767px) {
+    [astro-icon] {
+      width: 40px;
+      height: 40px;
+      font-size: 40px;
     }
 
     .card span {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
   }
 

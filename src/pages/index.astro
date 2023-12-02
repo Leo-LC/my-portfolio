@@ -43,9 +43,13 @@ import Skills from "../components/Skills/Skills.astro";
 </style>
 
 <script>
+  /*   const hamburger = document.getElementById("check-menu") as HTMLInputElement; */
+
+  const enableSmoothTouch = true; // Set your condition here
+
   import Lenis from "@studio-freight/lenis";
   const lenis = new Lenis({
-    smoothTouch: true,
+    smoothTouch: enableSmoothTouch,
   });
 
   const linkScroll = () => {
@@ -64,6 +68,11 @@ import Skills from "../components/Skills/Skills.astro";
 
   function raf(time: number) {
     lenis.raf(time);
+    /*     if (hamburger.checked) {
+      lenis.stop();
+    } else {
+      lenis.start();
+    } */
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);

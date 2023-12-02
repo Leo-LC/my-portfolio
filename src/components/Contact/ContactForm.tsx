@@ -7,7 +7,7 @@ const ContactForm = () => {
 
   return (
     <form
-      className=" text-base text-center md:text-left flex flex-col w-[70%] gap-[4rem] "
+      className=" text-base text-center md:text-left flex flex-col w-[70%] "
       id="contact-form"
       action={formAction}
       method="post"

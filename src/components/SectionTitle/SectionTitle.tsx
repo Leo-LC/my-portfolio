@@ -2,10 +2,6 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-// ERROR on build time
-/* import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger); */
-
 import styles from "./SectionTitle.module.css";
 
 interface Props {
