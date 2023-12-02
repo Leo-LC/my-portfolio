@@ -6,7 +6,7 @@ const socialData = [
   },
   {
     name: "Twitter",
-    icon: "fa:twitter",
+    icon: "fa:twitter-square",
     href: "https://twitter.com/Leo_Lecee",
   },
   {
